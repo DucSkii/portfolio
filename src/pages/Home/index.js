@@ -33,7 +33,7 @@ const Home = () => {
 
   const title = [
     'Hi,',
-    `I'm Duc`,
+    `I'm Duc,`,
     'web developer.',
   ]
 
