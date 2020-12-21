@@ -17,7 +17,6 @@ const PageLoad = () => {
   const [style, setStyle] = useState({})
 
   const loadPage = () => {
-    console.log('RUN_LOAD_PAGE')
     dispatch(disableTrue())
     setIsLoading(true)
     setTimeout(() => {
@@ -31,10 +30,10 @@ const PageLoad = () => {
         left: '100',
       })
       setTimeout(() => {
-        setIsLoading(false)
         setStyle({})
         dispatch(disableFalse())
-      }, 1000)
+        setIsLoading(false)
+      }, 800)
     }, 2000)
   }
 
@@ -44,14 +43,14 @@ const PageLoad = () => {
         loadPage()
         dispatch(setFalse())
       }
+      return null
     }
     unsubscribe()
-
     return () => {
       unsubscribe()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dispatch, loading])
+  }, [loading])
 
   return (
     isLoading &&

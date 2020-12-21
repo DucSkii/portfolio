@@ -15,20 +15,15 @@ const NavButton = ({ children, navigation }) => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    const unsubscribe = () => {
-      if (location.pathname === navigation) {
-        setIsLoaded(true)
-      }
+    if (location.pathname === navigation) {
+      setIsLoaded(true)
     }
-    unsubscribe()
     return () => {
-      unsubscribe()
       setIsLoaded(false)
     }
   }, [location.pathname, navigation])
 
   const pageLoad = () => {
-    console.log('location.pathname', location.pathname)
     if (isLoaded === true) {
       return null
     }

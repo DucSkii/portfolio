@@ -12,12 +12,13 @@ const Home = () => {
   const [style, setStyle] = useState({})
   const classes = useStyles()
 
-  console.log('loading', loading)
   useEffect(() => {
     if (loading === true) {
       setStyle({ opacity: '0' })
     } else {
       setStyle({ opacity: '1' })
+    }
+    return () => {
     }
   }, [loading])
 

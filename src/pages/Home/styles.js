@@ -5,6 +5,6 @@ export const useStyles = makeStyles({
     width: '100%',
     height: '100vh',
     opacity: '0',
-    transition: 'opacity 0.8s ease-in'
+    transition: 'opacity 0.8s ease-in-out'
   }
 })

@@ -11,26 +11,15 @@ const ProgressBar = ({ wait }) => {
   const showBar = () => {
     setShow(true)
     setTimeout(() => {
-      const newStyle = {
-        width: '300px',
-      }
-
-      setStyle(newStyle)
-      setTimeout(() => {
-        setStyle({})
-      }, 2000)
+      setStyle({ width: '300px' })
     }, 500)
   }
 
   useEffect(() => {
-    const unsubscribe = () => {
-      setTimeout(() => {
-        showBar()
-      }, wait)
-    }
-    unsubscribe()
+    setTimeout(() => {
+      showBar()
+    }, wait)
     return () => {
-      unsubscribe()
     }
   }, [wait])
 
