@@ -7,7 +7,7 @@ import VisibilityOutlinedIcon from '@material-ui/icons/VisibilityOutlined'
 import MailOutlineOutlinedIcon from '@material-ui/icons/MailOutlineOutlined'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import InstagramIcon from '@material-ui/icons/Instagram'
-import { Link } from 'react-router-dom'
+import NavButton from './NavButton'
 
 import { useStyles } from './styles'
 
@@ -19,31 +19,21 @@ const Navigation = () => {
     <div className={classes.container}>
       <div style={{ height: '90px' }} />
       <div className={classes.buttonContainer}>
-        <Link to='/'>
-          <Button className={classes.buttons}>
-            <HomeOutlinedIcon color='secondary' fontSize='large' />
-          </Button>
-        </Link>
-        <Link to='/about'>
-          <Button className={classes.buttons}>
-            <AccountCircleOutlinedIcon color='secondary' fontSize='large' />
-          </Button>
-        </Link>
-        <Link to='/skills'>
-          <Button className={classes.buttons}>
-            <SettingsOutlinedIcon color='secondary' fontSize='large' />
-          </Button>
-        </Link>
-        <Link to='/work'>
-          <Button className={classes.buttons}>
-            <VisibilityOutlinedIcon color='secondary' fontSize='large' />
-          </Button>
-        </Link>
-        <Link to='/contact'>
-          <Button className={classes.buttons}>
-            <MailOutlineOutlinedIcon color='secondary' fontSize='large' />
-          </Button>
-        </Link>
+        <NavButton navigation='/'>
+          <HomeOutlinedIcon color='secondary' fontSize='large' />
+        </NavButton>
+        <NavButton navigation='/about'>
+          <AccountCircleOutlinedIcon color='secondary' fontSize='large' />
+        </NavButton>
+        <NavButton navigation='/skills'>
+          <SettingsOutlinedIcon color='secondary' fontSize='large' />
+        </NavButton>
+        <NavButton navigation='/work'>
+          <VisibilityOutlinedIcon color='secondary' fontSize='large' />
+        </NavButton>
+        <NavButton navigation='/contact'>
+          <MailOutlineOutlinedIcon color='secondary' fontSize='large' />
+        </NavButton>
       </div>
       <div className={classes.socials}>
         <a href='https://github.com/DucSkii'>

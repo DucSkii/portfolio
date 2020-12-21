@@ -9,6 +9,7 @@ import Work from './pages/Work'
 import Contact from './pages/Contact'
 
 import { useStyles } from './styles'
+import PageLoad from './components/PageLoad'
 
 const App = () => {
 
@@ -34,13 +35,10 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.app}>
+        <PageLoad />
         <Router>
           <Navigation />
           <Switch>
-            {/* <Route path='/github' component={() => {
-              window.location.href = 'https://github.com/DucSkii';
-              return null;
-            }} /> */}
             <Route path='/contact' component={Contact} />
             <Route path='/work' component={Work} />
             <Route path='/skills' component={Skills} />

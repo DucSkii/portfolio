@@ -12,13 +12,6 @@ export const useStyles = makeStyles({
   socials: {
     
   },
-  buttons: {
-    maxWidth: '60px',
-    minWidth: '60px',
-    height: '60px',
-    padding: '0',
-    margin: '0',
-  },
   buttonSocials: {
     maxWidth: '60px',
     minWidth: '60px',
