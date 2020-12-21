@@ -6,5 +6,6 @@ export const useStyles = makeStyles({
     height: '10px',
     backgroundColor: '#ffffff',
     borderRadius: '20px',
+    userSelect: 'none',
   },
 })

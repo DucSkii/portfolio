@@ -8,5 +8,6 @@ export const useStyles = makeStyles({
     borderRadius: '20px',
     zIndex: '1',
     transition: '1s ease',
+    userSelect: 'none',
   },
 })

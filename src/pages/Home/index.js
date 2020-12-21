@@ -40,6 +40,7 @@ const Home = () => {
           left: '50%',
           transform: 'translate(-50%, -50%)',
           zIndex: '-100',
+          userSelect: 'none',
         }}
       />
       <Grid container>
@@ -47,7 +48,13 @@ const Home = () => {
         <Grid container item xs={12}>
           <Grid item xs={1} />
           <Grid container item xs={11}>
-            <Typography variant='h1' style={{ color: '#ffffff', cursor: 'default' }}>
+            <Typography variant='h1'
+              style={{
+                color: '#ffffff',
+                cursor: 'default',
+                userSelect: 'none',
+              }}
+            >
               Hi,
           </Typography>
           </Grid>
@@ -55,7 +62,13 @@ const Home = () => {
         <Grid container item xs={12}>
           <Grid item xs={1} />
           <Grid container item xs={11}>
-            <Typography variant='h1' style={{ color: '#ffffff', cursor: 'default' }}>
+            <Typography variant='h1'
+              style={{
+                color: '#ffffff',
+                cursor: 'default',
+                userSelect: 'none',
+              }}
+            >
               I'm Duc,
           </Typography>
           </Grid>
@@ -63,7 +76,13 @@ const Home = () => {
         <Grid container item xs={12}>
           <Grid item xs={1} />
           <Grid container item xs={11}>
-            <Typography variant='h1' style={{ color: '#ffffff', cursor: 'default' }}>
+            <Typography variant='h1'
+              style={{
+                color: '#ffffff',
+                cursor: 'default',
+                userSelect: 'none',
+              }}
+            >
               web developer.
           </Typography>
           </Grid>
@@ -71,7 +90,15 @@ const Home = () => {
         <Grid container item xs={12}>
           <Grid item xs={1} />
           <Grid container item xs={11}>
-            <Typography variant='h5' style={{ fontFamily: 'Roboto', marginTop: '10px', cursor: 'default', color: '#707cc3' }}>
+            <Typography variant='h5'
+              style={{
+                fontFamily: 'Roboto',
+                marginTop: '10px',
+                cursor: 'default',
+                color: '#707cc3',
+                userSelect: 'none',
+              }}
+            >
               Front End Developer / React Developer
           </Typography>
           </Grid>

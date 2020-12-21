@@ -59,7 +59,11 @@ const PageLoad = () => {
         <Grid item xs={12} style={{ height: '35vh' }} />
         <Grid container item xs={12} style={{ justifyContent: 'center' }}>
           <img src={duckLogo} alt='Logo'
-            style={{ objectFit: 'contain', maxWidth: '80px' }}
+            style={{
+              objectFit: 'contain',
+              maxWidth: '80px',
+              userSelect: 'none',
+            }}
           />
         </Grid>
         <Grid item xs={12} style={{ height: '3vh' }} />
