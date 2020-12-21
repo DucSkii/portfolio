@@ -49,12 +49,17 @@ const Home = () => {
                 color: '#ffffff',
                 cursor: 'default',
                 userSelect: 'none',
-                marginLeft: '8%',
+                marginLeft: '7.5%',
               }}
             >
               {titleArray.map((letter, index) => {
                 if (letter === ' ') {
                   return ' '
+                }
+                if (index === 0) {
+                  return (
+                    <span className='a' key={index} style={{ marginLeft: '5px' }}>{letter}</span>
+                  )
                 }
                 return (
                   <span className='a' key={index}>{letter}</span>
