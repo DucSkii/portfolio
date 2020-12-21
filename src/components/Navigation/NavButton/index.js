@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Button } from '@material-ui/core'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { setTrue } from '../../../redux/ducks/pageTransition'
 
@@ -13,6 +13,12 @@ const NavButton = ({ children, navigation }) => {
   const [isLoaded, setIsLoaded] = useState(false)
   const location = useLocation()
   const dispatch = useDispatch()
+  const history = useHistory()
+
+  const delayAndGo = e => {
+    e.preventDefault()
+    setTimeout(() => history.push(navigation), 500)
+  }
 
   useEffect(() => {
     if (location.pathname === navigation) {
@@ -33,7 +39,7 @@ const NavButton = ({ children, navigation }) => {
   return (
     <div className={classes.NavButton}>
       {!loading &&
-        <Link to={navigation}>
+        <Link to={navigation} onClick={delayAndGo}>
           <Button className={classes.buttons} onClick={pageLoad}>
             {children}
           </Button>

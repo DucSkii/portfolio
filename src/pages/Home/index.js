@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Grid, Typography, Button } from '@material-ui/core'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import duckAnimation from '../../video/duck-animation.gif'
 import { useSelector, useDispatch } from 'react-redux'
 import { setTrue } from '../../redux/ducks/pageTransition'
@@ -13,9 +13,11 @@ const Home = () => {
   const [style, setStyle] = useState({})
   const dispatch = useDispatch()
   const classes = useStyles()
+  const history = useHistory()
 
-  const pageLoad = () => {
-    dispatch(setTrue())
+  const delayAndGo = e => {
+    e.preventDefault()
+    setTimeout(() => history.push('/contact'), 500)
   }
 
   useEffect(() => {
@@ -108,21 +110,23 @@ const Home = () => {
           <Grid item xs={1} />
           <Grid container item xs={11}>
             {!loading &&
-              <Link to='/contact' style={{ textDecoration: 'none' }}>
-                <Button variant='outlined' color='primary' style={{ color: '#707cc3' }} onClick={pageLoad}>
+              <Link
+                to='/contact'
+                onClick={delayAndGo}
+                style={{ textDecoration: 'none' }}
+              >
+                <Button variant='outlined' color='primary' style={{ color: '#707cc3' }} onClick={() => dispatch(setTrue())}>
                   <Typography variant='h6' style={{ fontFamily: 'Roboto', fontWeight: 'bold' }}>
                     Contact me!
                   </Typography>
                 </Button>
-              </Link>
-            }
+              </Link>}
             {loading &&
               <Button variant='outlined' color='primary' style={{ color: '#707cc3' }}>
                 <Typography variant='h6' style={{ fontFamily: 'Roboto', fontWeight: 'bold' }}>
                   Contact me!
               </Typography>
-              </Button>
-            }
+              </Button>}
           </Grid>
         </Grid>
       </Grid>
