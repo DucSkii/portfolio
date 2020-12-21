@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Grid, Typography, Button } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import duckAnimation from '../../video/duck-animation.gif'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { setTrue } from '../../redux/ducks/pageTransition'
 
 import { useStyles } from './styles'
 
@@ -10,7 +11,12 @@ const Home = () => {
 
   const loading = useSelector(state => state.pageTransition.loadingDisable)
   const [style, setStyle] = useState({})
+  const dispatch = useDispatch()
   const classes = useStyles()
+
+  const pageLoad = () => {
+    dispatch(setTrue())
+  }
 
   useEffect(() => {
     if (loading === true) {
@@ -65,7 +71,7 @@ const Home = () => {
         <Grid container item xs={12}>
           <Grid item xs={1} />
           <Grid container item xs={11}>
-            <Typography variant='h5' color='primary' style={{ fontFamily: 'Roboto', marginTop: '10px', cursor: 'default' }}>
+            <Typography variant='h5' style={{ fontFamily: 'Roboto', marginTop: '10px', cursor: 'default', color: '#707cc3' }}>
               Front End Developer / React Developer
           </Typography>
           </Grid>
@@ -75,7 +81,7 @@ const Home = () => {
           <Grid item xs={1} />
           <Grid container item xs={11}>
             <Link to='/contact' style={{ textDecoration: 'none' }}>
-              <Button variant='outlined' color='primary'>
+              <Button variant='outlined' color='primary' style={{ color: '#707cc3' }} onClick={pageLoad}>
                 <Typography variant='h6' style={{ fontFamily: 'Roboto', fontWeight: 'bold' }}>
                   Contact me!
               </Typography>
