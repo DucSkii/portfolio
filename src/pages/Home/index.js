@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { setTrue } from '../../redux/ducks/pageTransition'
 
 import { useStyles } from './styles'
+import './index.css'
 
 const Home = () => {
 
@@ -13,8 +14,8 @@ const Home = () => {
   const [style, setStyle] = useState({})
   const dispatch = useDispatch()
   const classes = useStyles()
-  const history = useHistory()
 
+  const history = useHistory()
   const delayAndGo = e => {
     e.preventDefault()
     setTimeout(() => history.push('/contact'), 500)
@@ -30,9 +31,46 @@ const Home = () => {
     }
   }, [loading])
 
+  const title = [
+    'Hi,',
+    `I'm Duc`,
+    'web developer.'
+  ]
+
+  const renderTitle = () => {
+    return title.map(word => {
+      const titleArray = word.split('')
+      return (
+        <Grid container item xs={12}>
+          <Grid container item xs={12}>
+            <Typography variant='h1'
+              aria-hidden="true"
+              style={{
+                color: '#ffffff',
+                cursor: 'default',
+                userSelect: 'none',
+                marginLeft: '8%',
+              }}
+            >
+              {titleArray.map(letter => {
+                if (letter === ' ') {
+                  return ' '
+                }
+                return (
+                  <span class='a'>{letter}</span>
+                )
+              })}
+            </Typography>
+          </Grid>
+        </Grid>
+      )
+    })
+  }
+
   return (
     <div className={classes.Home} style={style}>
       <img src={duckAnimation} alt='Animated gif'
+        aria-hidden="true"
         style={{
           position: 'absolute',
           width: '100%',
@@ -47,14 +85,16 @@ const Home = () => {
       />
       <Grid container>
         <Grid item xs={12} style={{ height: '20vh' }} />
-        <Grid container item xs={12}>
-          <Grid item xs={1} />
-          <Grid container item xs={11}>
+        {renderTitle()}
+        {/* <Grid container item xs={12}>
+          <Grid container item xs={12}>
             <Typography variant='h1'
+              aria-hidden="true"
               style={{
                 color: '#ffffff',
                 cursor: 'default',
                 userSelect: 'none',
+                marginLeft: '8%',
               }}
             >
               Hi,
@@ -62,13 +102,14 @@ const Home = () => {
           </Grid>
         </Grid>
         <Grid container item xs={12}>
-          <Grid item xs={1} />
-          <Grid container item xs={11}>
+          <Grid container item xs={12}>
             <Typography variant='h1'
+              aria-hidden="true"
               style={{
                 color: '#ffffff',
                 cursor: 'default',
                 userSelect: 'none',
+                marginLeft: '8%',
               }}
             >
               I'm Duc,
@@ -76,23 +117,25 @@ const Home = () => {
           </Grid>
         </Grid>
         <Grid container item xs={12}>
-          <Grid item xs={1} />
-          <Grid container item xs={11}>
+          <Grid container item xs={12}>
             <Typography variant='h1'
+              aria-hidden="true"
               style={{
                 color: '#ffffff',
                 cursor: 'default',
                 userSelect: 'none',
+                marginLeft: '8%',
               }}
             >
               web developer.
           </Typography>
           </Grid>
-        </Grid>
+        </Grid> */}
         <Grid container item xs={12}>
           <Grid item xs={1} />
           <Grid container item xs={11}>
             <Typography variant='h5'
+              aria-hidden="true"
               style={{
                 fontFamily: 'Roboto',
                 marginTop: '10px',
