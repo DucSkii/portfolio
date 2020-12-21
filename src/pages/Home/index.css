@@ -3,11 +3,14 @@
   animation-fill-mode: both;
   animation-iteration-count: 1;
   display: inline-block;
+  color: #ffffff;
+  transition: all 0.5s ease-in-out;
 }
 
 .a:hover {
   color: #8dd0f4;
   animation-name: rubberBand;
+  transition: all 0.2s ease-in-out;
 }
 
 @keyframes rubberBand {
