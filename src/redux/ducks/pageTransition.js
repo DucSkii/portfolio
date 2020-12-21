@@ -1,6 +1,15 @@
 const initialState = {
   pageLoading: false,
+  loadingDisable: false,
 }
+
+export const disableTrue = () => ({
+  type: 'DISABLE_TRUE'
+})
+
+export const disableFalse = () => ({
+  type: 'DISABLE_FALSE'
+})
 
 export const setTrue = () => ({
   type: 'SET_TRUE'
@@ -23,6 +32,18 @@ export default (state = initialState, action) => {
       return {
         ...state,
         pageLoading: true,
+      }
+    }
+    case 'DISABLE_TRUE': {
+      return {
+        ...state,
+        loadingDisable: true,
+      }
+    }
+    case 'DISABLE_FALSE': {
+      return {
+        ...state,
+        loadingDisable: false,
       }
     }
     default:

@@ -2,12 +2,16 @@ import React from 'react'
 import { Grid, Typography, Button } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import duckAnimation from '../../video/duck-animation.gif'
+import { useSelector } from 'react-redux'
 
 import { useStyles } from './styles'
 
 const Home = () => {
 
+  const loading = useSelector(state => state.pageTransition.loadingDisable)
   const classes = useStyles()
+
+  console.log('loading', loading)
 
   return (
     <div className={classes.Home}>
@@ -20,7 +24,7 @@ const Home = () => {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          zIndex: '-1',
+          zIndex: '-100',
         }}
       />
       <Grid container>

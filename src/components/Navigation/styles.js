@@ -7,10 +7,11 @@ export const useStyles = makeStyles({
     backgroundColor: '#f3f5fd',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    zIndex: '5',
   },
   socials: {
-    
+
   },
   buttonSocials: {
     maxWidth: '60px',
