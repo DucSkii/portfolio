@@ -28,7 +28,7 @@ const Home = () => {
         <Grid container item xs={12}>
           <Grid item xs={1} />
           <Grid container item xs={11}>
-            <Typography variant='h1' style={{ color: '#ffffff' }}>
+            <Typography variant='h1' style={{ color: '#ffffff', cursor: 'default' }}>
               Hi,
           </Typography>
           </Grid>
@@ -36,7 +36,7 @@ const Home = () => {
         <Grid container item xs={12}>
           <Grid item xs={1} />
           <Grid container item xs={11}>
-            <Typography variant='h1' style={{ color: '#ffffff' }}>
+            <Typography variant='h1' style={{ color: '#ffffff', cursor: 'default' }}>
               I'm Duc,
           </Typography>
           </Grid>
@@ -44,7 +44,7 @@ const Home = () => {
         <Grid container item xs={12}>
           <Grid item xs={1} />
           <Grid container item xs={11}>
-            <Typography variant='h1' style={{ color: '#ffffff' }}>
+            <Typography variant='h1' style={{ color: '#ffffff', cursor: 'default' }}>
               web developer.
           </Typography>
           </Grid>
@@ -52,7 +52,7 @@ const Home = () => {
         <Grid container item xs={12}>
           <Grid item xs={1} />
           <Grid container item xs={11}>
-            <Typography variant='h5' color='primary' style={{ fontFamily: 'Roboto', marginTop: '10px' }}>
+            <Typography variant='h5' color='primary' style={{ fontFamily: 'Roboto', marginTop: '10px', cursor: 'default' }}>
               Front End Developer / React Developer
           </Typography>
           </Grid>
