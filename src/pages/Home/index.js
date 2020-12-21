@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Grid, Typography, Button } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import duckAnimation from '../../video/duck-animation.gif'
@@ -9,12 +9,20 @@ import { useStyles } from './styles'
 const Home = () => {
 
   const loading = useSelector(state => state.pageTransition.loadingDisable)
+  const [style, setStyle] = useState({})
   const classes = useStyles()
 
   console.log('loading', loading)
+  useEffect(() => {
+    if (loading === true) {
+      setStyle({ opacity: '0' })
+    } else {
+      setStyle({ opacity: '1' })
+    }
+  }, [loading])
 
   return (
-    <div className={classes.Home}>
+    <div className={classes.Home} style={style}>
       <img src={duckAnimation} alt='Animated gif'
         style={{
           position: 'absolute',
