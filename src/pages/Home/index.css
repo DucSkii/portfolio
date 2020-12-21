@@ -1,5 +1,13 @@
-.title.animated {
-  animation-name: rubberBand 1s;
+.a {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+  display: inline-block;
+}
+
+.a:hover {
+  color: #8dd0f4;
+  animation-name: rubberBand;
 }
 
 @keyframes rubberBand {
@@ -30,9 +38,4 @@
   to {
     transform: scale3d(1, 1, 1);
   }
-}
-
-.rubberBand {
-  -webkit-animation-name: rubberBand;
-  animation-name: rubberBand;
-}
+} 

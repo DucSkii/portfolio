@@ -34,14 +34,14 @@ const Home = () => {
   const title = [
     'Hi,',
     `I'm Duc`,
-    'web developer.'
+    'web developer.',
   ]
 
   const renderTitle = () => {
-    return title.map(word => {
+    return title.map((word, index) => {
       const titleArray = word.split('')
       return (
-        <Grid container item xs={12}>
+        <Grid container item xs={12} key={index}>
           <Grid container item xs={12}>
             <Typography variant='h1'
               aria-hidden="true"
@@ -52,12 +52,12 @@ const Home = () => {
                 marginLeft: '8%',
               }}
             >
-              {titleArray.map(letter => {
+              {titleArray.map((letter, index) => {
                 if (letter === ' ') {
                   return ' '
                 }
                 return (
-                  <span class='a'>{letter}</span>
+                  <span className='a' key={index}>{letter}</span>
                 )
               })}
             </Typography>
@@ -86,51 +86,6 @@ const Home = () => {
       <Grid container>
         <Grid item xs={12} style={{ height: '20vh' }} />
         {renderTitle()}
-        {/* <Grid container item xs={12}>
-          <Grid container item xs={12}>
-            <Typography variant='h1'
-              aria-hidden="true"
-              style={{
-                color: '#ffffff',
-                cursor: 'default',
-                userSelect: 'none',
-                marginLeft: '8%',
-              }}
-            >
-              Hi,
-          </Typography>
-          </Grid>
-        </Grid>
-        <Grid container item xs={12}>
-          <Grid container item xs={12}>
-            <Typography variant='h1'
-              aria-hidden="true"
-              style={{
-                color: '#ffffff',
-                cursor: 'default',
-                userSelect: 'none',
-                marginLeft: '8%',
-              }}
-            >
-              I'm Duc,
-          </Typography>
-          </Grid>
-        </Grid>
-        <Grid container item xs={12}>
-          <Grid container item xs={12}>
-            <Typography variant='h1'
-              aria-hidden="true"
-              style={{
-                color: '#ffffff',
-                cursor: 'default',
-                userSelect: 'none',
-                marginLeft: '8%',
-              }}
-            >
-              web developer.
-          </Typography>
-          </Grid>
-        </Grid> */}
         <Grid container item xs={12}>
           <Grid item xs={1} />
           <Grid container item xs={11}>
