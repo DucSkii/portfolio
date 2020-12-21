@@ -107,13 +107,22 @@ const Home = () => {
         <Grid container item xs={12}>
           <Grid item xs={1} />
           <Grid container item xs={11}>
-            <Link to='/contact' style={{ textDecoration: 'none' }}>
-              <Button variant='outlined' color='primary' style={{ color: '#707cc3' }} onClick={pageLoad}>
+            {!loading &&
+              <Link to='/contact' style={{ textDecoration: 'none' }}>
+                <Button variant='outlined' color='primary' style={{ color: '#707cc3' }} onClick={pageLoad}>
+                  <Typography variant='h6' style={{ fontFamily: 'Roboto', fontWeight: 'bold' }}>
+                    Contact me!
+                  </Typography>
+                </Button>
+              </Link>
+            }
+            {loading &&
+              <Button variant='outlined' color='primary' style={{ color: '#707cc3' }}>
                 <Typography variant='h6' style={{ fontFamily: 'Roboto', fontWeight: 'bold' }}>
                   Contact me!
               </Typography>
               </Button>
-            </Link>
+            }
           </Grid>
         </Grid>
       </Grid>
