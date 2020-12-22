@@ -1,16 +1,24 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Grid, Typography } from '@material-ui/core'
+import { motion } from 'framer-motion'
+import { pageTransition } from '../../utils/pageTransition'
 
 import { useStyles } from './styles'
 
 const About = () => {
 
   const classes = useStyles()
-  
+
   const title = 'About me'.split('')
 
   return (
-    <div className={classes.About}>
+    <motion.div
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={pageTransition}
+      className={classes.About}
+    >
       <Grid container>
         <Grid item xs={12} style={{ height: '30vh' }} />
         <Grid container item xs={12}>
@@ -43,7 +51,7 @@ const About = () => {
       <Grid container item xs={12}>
 
       </Grid>
-    </div>
+    </motion.div>
   )
 }
 

@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import { motion } from 'framer-motion'
+import { pageTransition } from '../../utils/pageTransition'
 
 import { useStyles } from './styles'
 
@@ -7,9 +9,15 @@ const Work = () => {
   const classes = useStyles()
 
   return (
-    <div className={classes.Work}>
+    <motion.div
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={pageTransition}
+      className={classes.Work}
+    >
       Work page
-    </div>
+    </motion.div>
   )
 }
 

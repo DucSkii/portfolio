@@ -11,6 +11,7 @@ import Drawer from '@material-ui/core/Drawer'
 import DrawerBar from './components/DrawerBar'
 import { useSelector, useDispatch } from 'react-redux'
 import { setDrawerFalse } from './redux/ducks/drawer'
+import { AnimatePresence } from 'framer-motion'
 
 import { useStyles } from './styles'
 
@@ -65,13 +66,15 @@ const App = () => {
             </Drawer>
           </ThemeProvider>
           <Navigation />
-          <Switch>
-            <Route path='/contact' component={Contact} />
-            <Route path='/work' component={Work} />
-            <Route path='/skills' component={Skills} />
-            <Route path='/about' component={About} />
-            <Route exact path='/' component={Home} />
-          </Switch>
+          <AnimatePresence>
+            <Switch>
+              <Route path='/contact' component={Contact} />
+              <Route path='/work' component={Work} />
+              <Route path='/skills' component={Skills} />
+              <Route path='/about' component={About} />
+              <Route exact path='/' component={Home} />
+            </Switch>
+          </AnimatePresence>
         </Router>
       </div>
     </ThemeProvider>

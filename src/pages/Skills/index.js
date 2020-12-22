@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Grid, Typography } from '@material-ui/core'
+import { motion } from 'framer-motion'
+import { pageTransition } from '../../utils/pageTransition'
 
 import { useStyles } from './styles'
 
@@ -10,7 +12,13 @@ const Skills = () => {
   const title = 'Skills & Experience'.split(' ')
 
   return (
-    <div className={classes.Skills}>
+    <motion.div
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={pageTransition}
+      className={classes.Skills}
+    >
       <Grid container>
         <Grid item xs={12} style={{ height: '30vh' }} />
         <Grid container item xs={12}>
@@ -43,7 +51,7 @@ const Skills = () => {
           </Typography>
         </Grid>
       </Grid>
-    </div>
+    </motion.div>
   )
 }
 

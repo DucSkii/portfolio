@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Grid, Typography, Button } from '@material-ui/core'
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import duckAnimation from '../../video/duck-animation.gif'
+import { motion } from 'framer-motion'
+import { pageTransition } from '../../utils/pageTransition'
 
 import { useStyles } from './styles'
 import '../../utils/rubberBand.css'
@@ -53,7 +55,13 @@ const Home = () => {
   }
 
   return (
-    <div className={classes.Home}>
+    <motion.div
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={pageTransition}
+      className={classes.Home}
+    >
       <img src={duckAnimation} alt='Animated gif'
         aria-hidden="true"
         style={{
@@ -93,22 +101,22 @@ const Home = () => {
         <Grid container item xs={12}>
           <Grid item xs={1} />
           <Grid container item xs={11}>
-              <Link
-                to='/contact'
-                style={{ textDecoration: 'none' }}
-              >
-                <Button variant='outlined' color='primary'>
-                  <Typography variant='h6' className={classes.contactButton}
-                    style={{ fontFamily: 'Roboto', fontWeight: 'bold' }}
-                  >
-                    Contact me!
+            <Link
+              to='/contact'
+              style={{ textDecoration: 'none' }}
+            >
+              <Button variant='outlined' color='primary'>
+                <Typography variant='h6' className={classes.contactButton}
+                  style={{ fontFamily: 'Roboto', fontWeight: 'bold' }}
+                >
+                  Contact me!
                   </Typography>
-                </Button>
-              </Link>
+              </Button>
+            </Link>
           </Grid>
         </Grid>
       </Grid>
-    </div>
+    </motion.div>
   )
 }
 

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Typography } from '@material-ui/core'
 import { Link } from 'react-router-dom'
-
 import { useStyles } from './styles'
 
 const NavButton = ({ children, navigation, Text }) => {
@@ -20,7 +19,10 @@ const NavButton = ({ children, navigation, Text }) => {
 
   return (
     <div className={classes.NavButton}>
-      <Link to={navigation} style={{ textDecoration: 'none' }}>
+      <Link to={navigation}
+        transition='slide-left'
+        style={{ textDecoration: 'none' }}
+      >
         <Button
           className={classes.buttons}
           onMouseOver={() => setHovered(true)}
