@@ -1,29 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { Grid, Typography } from '@material-ui/core'
-import { useSelector } from 'react-redux'
 
 import { useStyles } from './styles'
 
 const About = () => {
 
   const classes = useStyles()
-  const loading = useSelector(state => state.pageTransition.loadingDisable)
-  const [style, setStyle] = useState({})
-
+  
   const title = 'About me'.split('')
 
-  useEffect(() => {
-    if (loading === true) {
-      setStyle({ opacity: '0' })
-    } else {
-      setStyle({ opacity: '1' })
-    }
-    return () => {
-    }
-  }, [loading])
-
   return (
-    <div className={classes.About} style={style}>
+    <div className={classes.About}>
       <Grid container>
         <Grid item xs={12} style={{ height: '30vh' }} />
         <Grid container item xs={12}>

@@ -13,7 +13,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { setDrawerFalse } from './redux/ducks/drawer'
 
 import { useStyles } from './styles'
-import PageLoad from './components/PageLoad'
 
 const App = () => {
 
@@ -55,7 +54,6 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.app}>
-        <PageLoad />
         <Router>
           <ThemeProvider theme={theme}>
             <Drawer

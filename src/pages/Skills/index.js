@@ -1,29 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { Grid, Typography } from '@material-ui/core'
-import { useSelector } from 'react-redux'
 
 import { useStyles } from './styles'
 
 const Skills = () => {
 
   const classes = useStyles()
-  const loading = useSelector(state => state.pageTransition.loadingDisable)
-  const [style, setStyle] = useState({})
-
-  useEffect(() => {
-    if (loading === true) {
-      setStyle({ opacity: '0' })
-    } else {
-      setStyle({ opacity: '1' })
-    }
-    return () => {
-    }
-  }, [loading])
 
   const title = 'Skills & Experience'.split(' ')
 
   return (
-    <div className={classes.Skills} style={style}>
+    <div className={classes.Skills}>
       <Grid container>
         <Grid item xs={12} style={{ height: '30vh' }} />
         <Grid container item xs={12}>

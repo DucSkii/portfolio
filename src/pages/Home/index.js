@@ -2,34 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { Grid, Typography, Button } from '@material-ui/core'
 import { Link, useHistory } from 'react-router-dom'
 import duckAnimation from '../../video/duck-animation.gif'
-import { useSelector, useDispatch } from 'react-redux'
-import { setTrue } from '../../redux/ducks/pageTransition'
 
 import { useStyles } from './styles'
 import '../../utils/rubberBand.css'
 
 const Home = () => {
 
-  const loading = useSelector(state => state.pageTransition.loadingDisable)
-  const [style, setStyle] = useState({})
-  const dispatch = useDispatch()
   const classes = useStyles()
-
-  const history = useHistory()
-  const delayAndGo = e => {
-    e.preventDefault()
-    setTimeout(() => history.push('/contact'), 500)
-  }
-
-  useEffect(() => {
-    if (loading === true) {
-      setStyle({ opacity: '0' })
-    } else {
-      setStyle({ opacity: '1' })
-    }
-    return () => {
-    }
-  }, [loading])
 
   const title = [
     'Hi,',
@@ -74,7 +53,7 @@ const Home = () => {
   }
 
   return (
-    <div className={classes.Home} style={style}>
+    <div className={classes.Home}>
       <img src={duckAnimation} alt='Animated gif'
         aria-hidden="true"
         style={{
@@ -114,28 +93,18 @@ const Home = () => {
         <Grid container item xs={12}>
           <Grid item xs={1} />
           <Grid container item xs={11}>
-            {!loading &&
               <Link
                 to='/contact'
-                onClick={delayAndGo}
                 style={{ textDecoration: 'none' }}
               >
-                <Button variant='outlined' color='primary' onClick={() => dispatch(setTrue())}>
+                <Button variant='outlined' color='primary'>
                   <Typography variant='h6' className={classes.contactButton}
                     style={{ fontFamily: 'Roboto', fontWeight: 'bold' }}
                   >
                     Contact me!
                   </Typography>
                 </Button>
-              </Link>}
-            {loading &&
-              <Button variant='outlined' color='primary' style={{ color: '#707cc3' }}>
-                <Typography variant='h6' className={classes.contactButton}
-                  style={{ fontFamily: 'Roboto', fontWeight: 'bold' }}
-                >
-                  Contact me!
-              </Typography>
-              </Button>}
+              </Link>
           </Grid>
         </Grid>
       </Grid>
