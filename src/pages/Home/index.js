@@ -1,9 +1,8 @@
 import React from 'react'
 import { Grid, Typography, Button } from '@material-ui/core'
 import { Link } from 'react-router-dom'
-import duckAnimation from '../../video/duck-animation.gif'
 import { motion } from 'framer-motion'
-import { pageVariantVertical, pageTransitionLinear } from '../../utils/pageTransition'
+import { pageVariantVertical } from '../../utils/pageTransition'
 
 import { useStyles } from './styles'
 import '../../utils/rubberBand.css'
@@ -60,23 +59,8 @@ const Home = () => {
       animate="in"
       exit="out"
       variants={pageVariantVertical}
-      transition={pageTransitionLinear}
       className={classes.Home}
     >
-      <img src={duckAnimation} alt='Animated gif'
-        aria-hidden="true"
-        style={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          zIndex: '-100',
-          userSelect: 'none',
-        }}
-      />
       <Grid container>
         <Grid item xs={12} style={{ height: '20vh' }} />
         {renderTitle()}
