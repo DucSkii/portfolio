@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles'
 
 export const useStyles = makeStyles(theme => ({
-  container: {
+  drawerContainer: {
     height: '100vh',
     width: '60px',
     backgroundColor: '#f3f5fd',
@@ -9,18 +9,6 @@ export const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'space-between',
     zIndex: '5',
-    [theme.breakpoints.up('xs')]: {
-      display: 'none',
-    },
-    [theme.breakpoints.up('md')]: {
-      display: 'flex',
-    },
-  },
-  burgerMenuContainer: {
-    position: 'absolute',
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
-    },
   },
   buttonSocials: {
     maxWidth: '60px',

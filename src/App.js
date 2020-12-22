@@ -7,6 +7,10 @@ import About from './pages/About'
 import Skills from './pages/Skills'
 import Work from './pages/Work'
 import Contact from './pages/Contact'
+import Drawer from '@material-ui/core/Drawer'
+import DrawerBar from './components/DrawerBar'
+import { useSelector, useDispatch } from 'react-redux'
+import { setDrawerFalse } from './redux/ducks/drawer'
 
 import { useStyles } from './styles'
 import PageLoad from './components/PageLoad'
@@ -14,6 +18,8 @@ import PageLoad from './components/PageLoad'
 const App = () => {
 
   const classes = useStyles()
+  const open = useSelector(state => state.drawer.open)
+  const dispatch = useDispatch()
 
   const theme = createMuiTheme({
     typography: {
@@ -51,6 +57,15 @@ const App = () => {
       <div className={classes.app}>
         <PageLoad />
         <Router>
+          <ThemeProvider theme={theme}>
+            <Drawer
+              open={open}
+              anchor='left'
+              onClose={() => dispatch(setDrawerFalse())}
+            >
+              <DrawerBar />
+            </Drawer>
+          </ThemeProvider>
           <Navigation />
           <Switch>
             <Route path='/contact' component={Contact} />
