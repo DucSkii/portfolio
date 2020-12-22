@@ -21,5 +21,6 @@ export const pageVariantVertical = {
 }
 
 export const pageTransitionLinear = {
-  transition: 'linear'
+  transition: 'linear',
+  duration: 0.4,
 }
