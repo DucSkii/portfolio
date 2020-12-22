@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { pageTransition } from '../../utils/pageTransition'
+import { pageVariantHorizontal } from '../../utils/pageTransition'
 
 import { useStyles } from './styles'
 
@@ -13,7 +13,7 @@ const Work = () => {
       initial="out"
       animate="in"
       exit="out"
-      variants={pageTransition}
+      variants={pageVariantHorizontal}
       className={classes.Work}
     >
       Work page

@@ -1,6 +1,6 @@
 import React from 'react'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Switch, Route, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
 import Navigation from './components/Navigation'
 import About from './pages/About'
@@ -20,6 +20,7 @@ const App = () => {
   const classes = useStyles()
   const open = useSelector(state => state.drawer.open)
   const dispatch = useDispatch()
+  const location = useLocation()
 
   const theme = createMuiTheme({
     typography: {
@@ -55,27 +56,25 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.app}>
-        <Router>
-          <ThemeProvider theme={theme}>
-            <Drawer
-              open={open}
-              anchor='left'
-              onClose={() => dispatch(setDrawerFalse())}
-            >
-              <DrawerBar />
-            </Drawer>
-          </ThemeProvider>
-          <Navigation />
-          <AnimatePresence>
-            <Switch>
-              <Route path='/contact' component={Contact} />
-              <Route path='/work' component={Work} />
-              <Route path='/skills' component={Skills} />
-              <Route path='/about' component={About} />
-              <Route exact path='/' component={Home} />
-            </Switch>
-          </AnimatePresence>
-        </Router>
+        <ThemeProvider theme={theme}>
+          <Drawer
+            open={open}
+            anchor='left'
+            onClose={() => dispatch(setDrawerFalse())}
+          >
+            <DrawerBar />
+          </Drawer>
+        </ThemeProvider>
+        <Navigation />
+        <AnimatePresence exitBeforeEnter>
+          <Switch location={location} key={location.pathname}>
+            <Route path='/contact' component={Contact} />
+            <Route path='/work' component={Work} />
+            <Route path='/skills' component={Skills} />
+            <Route path='/about' component={About} />
+            <Route exact path='/' component={Home} />
+          </Switch>
+        </AnimatePresence>
       </div>
     </ThemeProvider>
   )

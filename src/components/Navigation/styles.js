@@ -18,6 +18,7 @@ export const useStyles = makeStyles(theme => ({
   },
   burgerMenuContainer: {
     position: 'absolute',
+    zIndex: '100',
     [theme.breakpoints.up('md')]: {
       display: 'none',
     },

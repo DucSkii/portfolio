@@ -3,7 +3,7 @@ import { Grid, Typography, Button } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import duckAnimation from '../../video/duck-animation.gif'
 import { motion } from 'framer-motion'
-import { pageTransition } from '../../utils/pageTransition'
+import { pageVariantVertical, pageTransitionLinear } from '../../utils/pageTransition'
 
 import { useStyles } from './styles'
 import '../../utils/rubberBand.css'
@@ -59,7 +59,8 @@ const Home = () => {
       initial="out"
       animate="in"
       exit="out"
-      variants={pageTransition}
+      variants={pageVariantVertical}
+      transition={pageTransitionLinear}
       className={classes.Home}
     >
       <img src={duckAnimation} alt='Animated gif'

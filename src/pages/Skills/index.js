@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid, Typography } from '@material-ui/core'
 import { motion } from 'framer-motion'
-import { pageTransition } from '../../utils/pageTransition'
+import { pageVariantHorizontal } from '../../utils/pageTransition'
 
 import { useStyles } from './styles'
 
@@ -16,7 +16,7 @@ const Skills = () => {
       initial="out"
       animate="in"
       exit="out"
-      variants={pageTransition}
+      variants={pageVariantHorizontal}
       className={classes.Skills}
     >
       <Grid container>
