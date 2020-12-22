@@ -9,9 +9,11 @@ export const useStyles = makeStyles(theme => ({
   },
   letters: {
     [theme.breakpoints.up('xs')]: {
+      marginTop: '10px',
       fontSize: '40px',
     },
     [theme.breakpoints.up('sm')]: {
+      marginTop: '0',
       fontSize: '60px'
     },
     [theme.breakpoints.up('md')]: {

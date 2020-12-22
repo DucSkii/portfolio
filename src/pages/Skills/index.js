@@ -30,11 +30,11 @@ const Skills = () => {
           <Typography
             variant='h2'
             color='primary'
+            className={classes.letters}
             style={{
               cursor: 'default',
               userSelect: 'none',
               marginLeft: '7.5%',
-              fontSize: '80px',
             }}
           >
             {title.map((letter, index) => {
