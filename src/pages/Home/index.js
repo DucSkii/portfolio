@@ -45,6 +45,7 @@ const Home = () => {
           <Grid container item xs={12}>
             <Typography variant='h1'
               aria-hidden="true"
+              className={classes.letters}
               style={{
                 color: '#ffffff',
                 cursor: 'default',
@@ -96,11 +97,12 @@ const Home = () => {
           <Grid container item xs={11}>
             <Typography variant='h5'
               aria-hidden="true"
+              color='primary'
+              className={classes.text}
               style={{
                 fontFamily: 'Roboto',
                 marginTop: '10px',
                 cursor: 'default',
-                color: '#707cc3',
                 userSelect: 'none',
               }}
             >
@@ -118,15 +120,19 @@ const Home = () => {
                 onClick={delayAndGo}
                 style={{ textDecoration: 'none' }}
               >
-                <Button variant='outlined' color='primary' style={{ color: '#707cc3' }} onClick={() => dispatch(setTrue())}>
-                  <Typography variant='h6' style={{ fontFamily: 'Roboto', fontWeight: 'bold' }}>
+                <Button variant='outlined' color='primary' onClick={() => dispatch(setTrue())}>
+                  <Typography variant='h6' className={classes.contactButton}
+                    style={{ fontFamily: 'Roboto', fontWeight: 'bold' }}
+                  >
                     Contact me!
                   </Typography>
                 </Button>
               </Link>}
             {loading &&
               <Button variant='outlined' color='primary' style={{ color: '#707cc3' }}>
-                <Typography variant='h6' style={{ fontFamily: 'Roboto', fontWeight: 'bold' }}>
+                <Typography variant='h6' className={classes.contactButton}
+                  style={{ fontFamily: 'Roboto', fontWeight: 'bold' }}
+                >
                   Contact me!
               </Typography>
               </Button>}

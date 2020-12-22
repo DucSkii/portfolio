@@ -15,6 +15,7 @@ const NavButton = ({ children, navigation, Text }) => {
   const dispatch = useDispatch()
   const history = useHistory()
   const [hovered, setHovered] = useState(false)
+  const [style, setStyle] = useState({})
 
   const delayAndGo = e => {
     e.preventDefault()
@@ -27,8 +28,18 @@ const NavButton = ({ children, navigation, Text }) => {
     }
     return () => {
       setIsLoaded(false)
+      setHovered(false)
     }
   }, [location.pathname, navigation])
+
+
+  useEffect(() => {
+    if (hovered === true) {
+      setStyle({ opacity: '1' })
+    } else {
+      setStyle({})
+    }
+  }, [hovered])
 
   const pageLoad = () => {
     if (isLoaded === true) {
@@ -50,25 +61,15 @@ const NavButton = ({ children, navigation, Text }) => {
             {hovered ? (
               (Text === 'Projects' || Text === 'Contact') ? (
                 <Typography
-                  style={{
-                    fontFamily: 'Roboto',
-                    fontSize: '9px',
-                    textAlign: 'center',
-                    letterSpacing: '1px',
-                    color: '#47b3ed',
-                  }}
+                  className={classes.textSmall}
+                  style={style}
                 >
                   {Text}
                 </Typography>
               ) : (
                   <Typography
-                    style={{
-                      fontFamily: 'Roboto',
-                      fontSize: '12px',
-                      textAlign: 'center',
-                      letterSpacing: '1px',
-                      color: '#47b3ed',
-                    }}
+                    className={classes.text}
+                    style={style}
                   >
                     {Text}
                   </Typography>

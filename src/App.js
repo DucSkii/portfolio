@@ -24,12 +24,26 @@ const App = () => {
     },
     palette: {
       primary: {
-        main: '#8d9cf4',
+        main: '#707cc3',
       },
       secondary: {
         main: '#8dd0f4'
       }
     },
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 578,
+        md: 960,
+        lg: 1780,
+        xl: 1920,
+      }
+    }
+    // xs, extra-small: 0px
+    // sm, small: 600px
+    // md, medium: 960px
+    // lg, large: 1280px
+    // xl, extra-large: 1920px
   })
 
   return (

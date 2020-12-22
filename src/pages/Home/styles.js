@@ -1,10 +1,43 @@
 import { makeStyles } from '@material-ui/core/styles'
 
-export const useStyles = makeStyles({
+export const useStyles = makeStyles(theme => ({
   Home: {
     width: '100%',
     height: '100vh',
     opacity: '0',
     transition: 'opacity 0.8s ease-in-out'
-  }
-})
+  },
+  letters: {
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '40px',
+    },
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '60px'
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '80px'
+    },
+  },
+  text: {
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '17px',
+    },
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '22px',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '25px'
+    },
+  },
+  contactButton: {
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '15px',
+    },
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '18px',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '20px',
+    }
+  },
+}))

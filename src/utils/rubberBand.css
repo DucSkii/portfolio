@@ -3,7 +3,6 @@
   animation-fill-mode: both;
   animation-iteration-count: 1;
   display: inline-block;
-  color: #ffffff;
   transition: all 0.5s ease-in-out;
 }
 
