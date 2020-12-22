@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { setTrue } from '../../redux/ducks/pageTransition'
 
 import { useStyles } from './styles'
-import './index.css'
+import '../../utils/rubberBand.css'
 
 const Home = () => {
 

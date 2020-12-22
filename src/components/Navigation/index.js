@@ -19,19 +19,19 @@ const Navigation = () => {
     <div className={classes.container}>
       <div style={{ height: '90px' }} />
       <div className={classes.buttonContainer}>
-        <NavButton navigation='/'>
+        <NavButton navigation='/' Text='Home'>
           <HomeOutlinedIcon color='secondary' fontSize='large' />
         </NavButton>
-        <NavButton navigation='/about'>
+        <NavButton navigation='/about' Text='About'>
           <AccountCircleOutlinedIcon color='secondary' fontSize='large' />
         </NavButton>
-        <NavButton navigation='/skills'>
+        <NavButton navigation='/skills' Text='Skills'>
           <SettingsOutlinedIcon color='secondary' fontSize='large' />
         </NavButton>
-        <NavButton navigation='/work'>
+        <NavButton navigation='/work' Text='Projects'>
           <VisibilityOutlinedIcon color='secondary' fontSize='large' />
         </NavButton>
-        <NavButton navigation='/contact'>
+        <NavButton navigation='/contact' Text='Contact'>
           <MailOutlineOutlinedIcon color='secondary' fontSize='large' />
         </NavButton>
       </div>
