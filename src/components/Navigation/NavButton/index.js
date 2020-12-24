@@ -32,12 +32,14 @@ const NavButton = ({ children, navigation, Text, setOpen, open }) => {
     } else if (open === true) {
       return (
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <Button
-            className={classes.buttons}
-          >
-            {children}
+          <Button className={classes.buttonExpand}>
+            <div
+              className={classes.buttons}
+            >
+              {children}
+            </div>
+            <Typography color='primary'>{Text}</Typography>
           </Button>
-          <Typography color='primary'>{Text}</Typography>
         </div>
       )
     } else {
@@ -76,15 +78,17 @@ const NavButton = ({ children, navigation, Text, setOpen, open }) => {
   const renderExpand = () => {
     if (open === true) {
       return (
-        <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
-          onClick={() => setOpen(false)}
-        >
-          <Button
-            className={classes.buttons}
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <Button className={classes.buttonExpand}
+            onClick={() => setOpen(false)}
           >
-            {children}
+            <div
+              className={classes.buttons}
+            >
+              {children}
+            </div>
+            <Typography color='primary'>{Text}</Typography>
           </Button>
-          <Typography color='primary'>{Text}</Typography>
         </div>
       )
     }

@@ -27,11 +27,103 @@ const Navigation = () => {
 
   useEffect(() => {
     if (open === true) {
-      setStyle({ width: '140px' })
+      setStyle({ width: '170px' })
     } else {
       setStyle({})
     }
   }, [open])
+
+  const renderSocials = () => {
+
+    if (open === true) {
+      return (
+        <div className={classes.socials}>
+          <a href='https://github.com/DucSkii'
+            style={{
+              display: 'flex',
+              textDecoration: 'none',
+              alignItems: 'center',
+            }}
+          >
+            <Button className={classes.buttonSocialsExpanded}>
+              <div className={classes.buttonSocials}>
+                <GitHubIcon color='primary' fontSize='small' />
+              </div>
+              <Typography color='primary' style={{ fontSize: '13px' }}>GitHub</Typography>
+            </Button>
+          </a>
+          <a href='https://www.linkedin.com/in/ducviet-dao-898457202/'
+            style={{
+              display: 'flex',
+              textDecoration: 'none',
+              alignItems: 'center',
+            }}
+          >
+            <Button className={classes.buttonSocialsExpanded}>
+              <div className={classes.buttonSocials}>
+                <LinkedInIcon color='primary' fontSize='small' />
+              </div>
+              <Typography color='primary' style={{ fontSize: '13px' }}>LinkedIn</Typography>
+            </Button>
+          </a>
+          <a href='https://www.instagram.com/ducskii/'
+            style={{
+              display: 'flex',
+              textDecoration: 'none',
+              alignItems: 'center',
+              marginBottom: '30px',
+            }}
+          >
+            <Button className={classes.buttonSocialsExpanded} >
+              <div className={classes.buttonSocials}>
+                <InstagramIcon color='primary' fontSize='small' />
+              </div>
+              <Typography color='primary' style={{ fontSize: '13px' }}>Instagram</Typography>
+            </Button>
+          </a>
+        </div>
+      )
+    }
+
+    return (
+      <div className={classes.socials}>
+        <a href='https://github.com/DucSkii'
+          style={{
+            display: 'flex',
+            textDecoration: 'none',
+            alignItems: 'center',
+          }}
+        >
+          <Button className={classes.buttonSocials}>
+            <GitHubIcon color='primary' fontSize='small' />
+          </Button>
+        </a>
+        <a href='https://www.linkedin.com/in/ducviet-dao-898457202/'
+          style={{
+            display: 'flex',
+            textDecoration: 'none',
+            alignItems: 'center',
+          }}
+        >
+          <Button className={classes.buttonSocials}>
+            <LinkedInIcon color='primary' fontSize='small' />
+          </Button>
+        </a>
+        <a href='https://www.instagram.com/ducskii/'
+          style={{
+            display: 'flex',
+            textDecoration: 'none',
+            alignItems: 'center',
+            marginBottom: '30px',
+          }}
+        >
+          <Button className={classes.buttonSocials} >
+            <InstagramIcon color='primary' fontSize='small' />
+          </Button>
+        </a>
+      </div>
+    )
+  }
 
   return (
     <>
@@ -80,45 +172,7 @@ const Navigation = () => {
             <MailOutlineOutlinedIcon color='secondary' fontSize='large' />
           </NavButton>
         </div>
-        <div className={classes.socials}>
-          <a href='https://github.com/DucSkii'
-            style={{
-              display: 'flex',
-              textDecoration: 'none',
-              alignItems: 'center',
-            }}
-          >
-            <Button className={classes.buttonSocials}>
-              <GitHubIcon color='primary' fontSize='small' />
-            </Button>
-            <Typography color='primary' style={{ fontSize: '13px' }}>GitHub</Typography>
-          </a>
-          <a href='https://www.linkedin.com/in/ducviet-dao-898457202/'
-            style={{
-              display: 'flex',
-              textDecoration: 'none',
-              alignItems: 'center',
-            }}
-          >
-            <Button className={classes.buttonSocials}>
-              <LinkedInIcon color='primary' fontSize='small' />
-            </Button>
-            <Typography color='primary' style={{ fontSize: '13px' }}>LinkedIn</Typography>
-          </a>
-          <a href='https://www.instagram.com/ducskii/'
-            style={{
-              display: 'flex',
-              textDecoration: 'none',
-              alignItems: 'center',
-              marginBottom: '30px',
-            }}
-          >
-            <Button className={classes.buttonSocials} >
-              <InstagramIcon color='primary' fontSize='small' />
-            </Button>
-            <Typography color='primary' style={{ fontSize: '13px' }}>Instagram</Typography>
-          </a>
-        </div>
+        {renderSocials()}
       </div>
     </>
   )
