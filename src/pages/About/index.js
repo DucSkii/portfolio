@@ -43,7 +43,7 @@ const About = () => {
     return aboutMeText.map((paragraph, index) => {
       if (paragraph === ' ') {
         return (
-          <div style={{ height: '25px' }} key={index} />
+          <div style={{ height: '20px' }} key={index} />
         )
       }
       return (

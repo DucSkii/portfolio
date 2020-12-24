@@ -31,4 +31,10 @@ export const useStyles = makeStyles(theme => ({
       fontSize: '16px',
     },
   },
+  skillIcons: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '10px',
+    userSelect: 'none',
+  }
 }))
