@@ -12,8 +12,6 @@ const DrawerButton = ({ children, navigation, Text }) => {
   const [isLoaded, setIsLoaded] = useState(false)
   const location = useLocation()
   const dispatch = useDispatch()
-  const [hovered, setHovered] = useState(false)
-  const [style, setStyle] = useState({})
 
   useEffect(() => {
     if (location.pathname === navigation) {
@@ -23,15 +21,6 @@ const DrawerButton = ({ children, navigation, Text }) => {
       setIsLoaded(false)
     }
   }, [location.pathname, navigation])
-
-
-  useEffect(() => {
-    if (hovered === true) {
-      setStyle({ opacity: '1' })
-    } else {
-      setStyle({})
-    }
-  }, [hovered])
 
   const pageLoad = () => {
     if (isLoaded === true) {
@@ -53,34 +42,15 @@ const DrawerButton = ({ children, navigation, Text }) => {
       )
     }
     return (
-      <Button
-        className={classes.buttons}
-        onClick={pageLoad}
-        onMouseOver={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-      >
-        {hovered ? (
-          (Text === 'Projects' || Text === 'Contact') ? (
-            <Typography
-              className={classes.textSmall}
-              style={style}
-            >
-              {Text}
-            </Typography>
-          ) : (
-              <Typography
-                className={classes.text}
-                style={style}
-              >
-                {Text}
-              </Typography>
-            )
-        ) : (
-            <>
-              {children}
-            </>
-          )}
-      </Button>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <Button
+          className={classes.buttons}
+          onClick={pageLoad}
+        >
+          {children}
+        </Button>
+        <Typography color='primary'>{Text}</Typography>
+      </div>
     )
   }
 

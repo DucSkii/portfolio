@@ -19,7 +19,7 @@ const NavButton = ({ children, navigation, Text, setOpen, open }) => {
       setStyle({})
     }
   }, [hovered, open])
-  console.log('open', open)
+
   const renderButton = () => {
     if (Text === 'logo') {
       return (

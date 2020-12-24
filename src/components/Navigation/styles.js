@@ -9,7 +9,7 @@ export const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'space-between',
     zIndex: '5',
-    transition: '1s ease',
+    transition: '0.5s ease',
     [theme.breakpoints.up('xs')]: {
       display: 'none',
     },
