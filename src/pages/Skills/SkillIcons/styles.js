@@ -8,7 +8,7 @@ export const useStyles = makeStyles(theme => ({
     alignItems: 'center',
     marginRight: '10px',
     width: '56px',
-    transition: '0.8s ease',
+    transition: '0.5s ease',
     [theme.breakpoints.up('sm')]: {
       width: '72px',
     },
