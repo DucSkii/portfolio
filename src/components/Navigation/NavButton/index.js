@@ -76,10 +76,11 @@ const NavButton = ({ children, navigation, Text, setOpen, open }) => {
   const renderExpand = () => {
     if (open === true) {
       return (
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
+          onClick={() => setOpen(false)}
+        >
           <Button
             className={classes.buttons}
-            onClick={() => setOpen(false)}
           >
             {children}
           </Button>
