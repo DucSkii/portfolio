@@ -2,8 +2,20 @@ import { makeStyles } from '@material-ui/core/styles'
 
 export const useStyles = makeStyles({
   buttons: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     maxWidth: '60px',
     minWidth: '60px',
+    height: '60px',
+    padding: '0',
+    margin: '0',
+  },
+  buttonExpand: {
+    display: 'flex',
+    justifyContent: 'flex-start',
+    maxWidth: '170px',
+    minWidth: '170px',
     height: '60px',
     padding: '0',
     margin: '0',

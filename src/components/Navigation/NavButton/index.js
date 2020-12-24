@@ -22,6 +22,22 @@ const NavButton = ({ children, navigation, Text, setOpen, open }) => {
 
   const renderButton = () => {
     if (Text === 'logo') {
+      if (open === true) {
+        return (
+          <Button
+            className={classes.buttonExpand}
+            style={{ justifyContent: 'center' }}
+          >
+            <div className={classes.buttons}
+              style={{
+                marginRight: '15px',
+              }}
+            >
+              {children}
+            </div>
+          </Button>
+        )
+      }
       return (
         <Button
           className={classes.buttons}

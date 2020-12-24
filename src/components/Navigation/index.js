@@ -136,7 +136,7 @@ const Navigation = () => {
       </div>
       <div className={classes.container} style={style}>
         <div>
-          <NavButton navigation='/' Text='logo'>
+          <NavButton navigation='/' Text='logo' open={open}>
             <img src={duckLogo} alt='logo'
               style={{
                 objectFit: 'contain',

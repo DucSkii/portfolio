@@ -35,21 +35,26 @@ const DrawerButton = ({ children, navigation, Text }) => {
       return (
         <Button
           onClick={pageLoad}
-          className={classes.buttons}
+          className={classes.buttonExpand}
+          style={{ justifyContent: 'center' }}
         >
-          {children}
+          <div className={classes.buttons}>
+            {children}
+          </div>
         </Button>
       )
     }
     return (
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <Button
-          className={classes.buttons}
+          className={classes.buttonExpand}
           onClick={pageLoad}
         >
-          {children}
+          <div className={classes.buttons}>
+            {children}
+          </div>
+          <Typography color='primary'>{Text}</Typography>
         </Button>
-        <Typography color='primary' onClick={pageLoad}>{Text}</Typography>
       </div>
     )
   }

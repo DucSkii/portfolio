@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 export const useStyles = makeStyles(theme => ({
   drawerContainer: {
     height: '100vh',
-    width: '140px',
+    width: '170px',
     backgroundColor: '#f3f5fd',
     display: 'flex',
     flexDirection: 'column',
