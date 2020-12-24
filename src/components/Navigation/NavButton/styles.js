@@ -37,5 +37,6 @@ export const useStyles = makeStyles({
     height: '60px',
     padding: '0',
     margin: '0',
+    transition: '1s ease'
   },
 })
