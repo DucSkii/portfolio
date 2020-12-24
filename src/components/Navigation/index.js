@@ -6,6 +6,7 @@ import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined'
 import VisibilityOutlinedIcon from '@material-ui/icons/VisibilityOutlined'
 import MailOutlineOutlinedIcon from '@material-ui/icons/MailOutlineOutlined'
 import GitHubIcon from '@material-ui/icons/GitHub'
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import InstagramIcon from '@material-ui/icons/Instagram'
 import MenuIcon from '@material-ui/icons/Menu'
 import NavButton from './NavButton'
@@ -29,7 +30,7 @@ const Navigation = () => {
         </IconButton>
       </div>
       <div className={classes.container}>
-        <div style={{ height: '90px' }} />
+        <div style={{ height: '120px' }} />
         <div className={classes.buttonContainer}>
           <NavButton navigation='/' Text='Home'>
             <HomeOutlinedIcon color='secondary' fontSize='large' />
@@ -51,6 +52,11 @@ const Navigation = () => {
           <a href='https://github.com/DucSkii'>
             <Button className={classes.buttonSocials}>
               <GitHubIcon color='primary' fontSize='small' />
+            </Button>
+          </a>
+          <a href='https://www.linkedin.com/in/ducviet-dao-898457202/'>
+            <Button className={classes.buttonSocials}>
+              <LinkedInIcon color='primary' fontSize='small' />
             </Button>
           </a>
           <a href='https://www.instagram.com/ducskii/'>
