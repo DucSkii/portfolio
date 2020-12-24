@@ -6,9 +6,7 @@ export const useStyles = makeStyles(theme => ({
     height: '100vh',
   },
   titleHeight: {
-    [theme.breakpoints.up('xs')]: {
       height: '10vh',
-    },
     [theme.breakpoints.up('md')]: {
       height: '30vh',
     },

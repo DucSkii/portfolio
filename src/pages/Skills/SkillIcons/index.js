@@ -34,7 +34,7 @@ const SkillIcons = ({ icon, title }) => {
           }}
         />
       </div>
-      <Typography color='primary' style={{ marginTop: '5px' }}>{title}</Typography>
+      <Typography color='primary' className={classes.title}>{title}</Typography>
     </div>
   )
 }

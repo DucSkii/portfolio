@@ -51,6 +51,10 @@ const Skills = () => {
       icon: 'https://material-ui.com/static/logo.png',
       title: 'Material-UI',
     },
+    {
+      icon: 'https://img.icons8.com/color/452/firebase.png',
+      title: 'Firebase',
+    },
   ]
 
   const renderText = () => {
@@ -91,7 +95,7 @@ const Skills = () => {
       className={classes.Skills}
     >
       <Grid container>
-        <Grid item xs={12} style={{ height: '30vh' }} />
+        <Grid item xs={12} className={classes.titleGap} />
         <Grid container item xs={12}>
           <Typography
             variant='h2'
@@ -133,7 +137,7 @@ const Skills = () => {
                 Visit my <a href='https://www.linkedin.com/in/ducviet-dao-898457202/' style={{ color: '#707cc3', fontWeight: 'bold' }}>LinkedIn</a> / <a href='https://github.com/DucSkii' style={{ color: '#707cc3', fontWeight: 'bold' }}>GitHub</a> profile for more details or just contact me.
               </Typography>
             </Grid>
-            <Grid item xs={12} style={{ height: '5vh' }} />
+            <Grid item xs={12} className={classes.gap} />
             <Grid container item xs={12}>
               {renderIcons()}
             </Grid>

@@ -5,6 +5,12 @@ export const useStyles = makeStyles(theme => ({
     width: '100%',
     height: '100vh',
   },
+  titleGap: {
+    height: '10vh',
+    [theme.breakpoints.up('md')]: {
+      height: '30vh'
+    },
+  },
   letters: {
     [theme.breakpoints.up('xs')]: {
       minWidth: '335px',
@@ -36,5 +42,11 @@ export const useStyles = makeStyles(theme => ({
     alignItems: 'center',
     padding: '10px',
     userSelect: 'none',
-  }
+  },
+  gap: {
+    height: '1vh',
+    [theme.breakpoints.up('md')]: {
+      height: '5vh'
+    },
+  },
 }))
