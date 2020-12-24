@@ -41,37 +41,53 @@ const DrawerButton = ({ children, navigation, Text }) => {
     dispatch(setDrawerFalse())
   }
 
-  return (
-    <div className={classes.DrawerButton}>
-      <Link to={navigation} style={{ textDecoration: 'none' }}>
+  const renderButton = () => {
+    if (Text === 'logo') {
+      return (
         <Button
-          className={classes.buttons}
           onClick={pageLoad}
-          onMouseOver={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
+          className={classes.buttons}
         >
-          {hovered ? (
-            (Text === 'Projects' || Text === 'Contact') ? (
+          {children}
+        </Button>
+      )
+    }
+    return (
+      <Button
+        className={classes.buttons}
+        onClick={pageLoad}
+        onMouseOver={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        {hovered ? (
+          (Text === 'Projects' || Text === 'Contact') ? (
+            <Typography
+              className={classes.textSmall}
+              style={style}
+            >
+              {Text}
+            </Typography>
+          ) : (
               <Typography
-                className={classes.textSmall}
+                className={classes.text}
                 style={style}
               >
                 {Text}
               </Typography>
-            ) : (
-                <Typography
-                  className={classes.text}
-                  style={style}
-                >
-                  {Text}
-                </Typography>
-              )
-          ) : (
-              <>
-                {children}
-              </>
-            )}
-        </Button>
+            )
+        ) : (
+            <>
+              {children}
+            </>
+          )}
+      </Button>
+    )
+  }
+
+  return (
+    <div className={classes.DrawerButton}>
+      <Link to={navigation} style={{ textDecoration: 'none' }}>
+        {renderButton()}
       </Link>
     </div>
   )

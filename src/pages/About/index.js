@@ -40,14 +40,15 @@ const About = () => {
   ]
 
   const renderText = () => {
-    return aboutMeText.map(paragraph => {
+    return aboutMeText.map((paragraph, index) => {
       if (paragraph === ' ') {
         return (
-          <div style={{ height: '25px' }} />
+          <div style={{ height: '25px' }} key={index} />
         )
       }
       return (
         <Typography
+          key={index}
           className={classes.aboutMeText}
         >
           {paragraph}

@@ -8,6 +8,7 @@ import MailOutlineOutlinedIcon from '@material-ui/icons/MailOutlineOutlined'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import InstagramIcon from '@material-ui/icons/Instagram'
 import DrawerButton from './DrawerButton'
+import duckLogo from '../../images/duckLogo.png'
 
 import { useStyles } from './styles'
 
@@ -17,7 +18,16 @@ const Drawer = () => {
 
   return (
     <div className={classes.drawerContainer}>
-      <div style={{ height: '90px' }} />
+
+      <DrawerButton navigation='/' Text='logo'>
+        <img src={duckLogo} alt='logo'
+          style={{
+            objectFit: 'contain',
+            width: '100%',
+            padding: '15px',
+          }}
+        />
+      </DrawerButton>
       <div className={classes.buttonContainer}>
         <DrawerButton navigation='/' Text='Home'>
           <HomeOutlinedIcon color='secondary' fontSize='large' />

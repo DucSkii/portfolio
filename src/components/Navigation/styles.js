@@ -9,12 +9,17 @@ export const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'space-between',
     zIndex: '5',
+    transition: '1s ease',
     [theme.breakpoints.up('xs')]: {
       display: 'none',
     },
     [theme.breakpoints.up('md')]: {
       display: 'flex',
     },
+  },
+  socials: {
+    display: 'flex',
+    flexDirection: 'column',
   },
   burgerMenuContainer: {
     position: 'absolute',

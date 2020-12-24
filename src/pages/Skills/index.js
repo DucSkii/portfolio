@@ -11,6 +11,30 @@ const Skills = () => {
 
   const title = 'Skills & Experience'.split(' ')
 
+  const aboutMeText = [
+    'My expertise in web development lay in the front end department (client side of the web).',
+    ' ',
+    'HTML, CSS(SCSS), JS (React), Material UI, I am able to create interactive and responsive web designs.'
+  ]
+
+  const renderText = () => {
+    return aboutMeText.map((paragraph, index) => {
+      if (paragraph === ' ') {
+        return (
+          <div style={{ height: '25px' }} key={index} />
+        )
+      }
+      return (
+        <Typography
+          className={classes.skillsText}
+          key={index}
+        >
+          {paragraph}
+        </Typography>
+      )
+    })
+  }
+
   return (
     <motion.div
       initial="out"
@@ -49,6 +73,17 @@ const Skills = () => {
               }
             })}
           </Typography>
+        </Grid>
+        <Grid container item xs={12}>
+          <Grid item xs={1} />
+          <Grid container item xs={10}>
+            <Grid item md={6}>
+              {renderText()}
+            </Grid>
+            <Grid item md={6}>
+            </Grid>
+          </Grid>
+          <Grid item xs={1} />
         </Grid>
       </Grid>
     </motion.div>

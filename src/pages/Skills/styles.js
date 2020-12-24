@@ -18,4 +18,17 @@ export const useStyles = makeStyles(theme => ({
       fontSize: '70px',
     },
   },
+  skillsText: {
+    fontFamily: 'Roboto',
+    marginLeft: '13px',
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '13px',
+    },
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '15px',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '16px',
+    },
+  },
 }))
