@@ -26,7 +26,7 @@ const NavButton = ({ children, navigation, Text, setOpen, open }) => {
         return (
           <Button
             className={classes.buttonExpand}
-            style={{ justifyContent: 'center' }}
+            style={{ justifyContent: 'center', transition: '0.5s ease' }}
           >
             <div className={classes.buttons}
               style={{
