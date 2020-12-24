@@ -2,6 +2,7 @@ import React from 'react'
 import { Grid, Typography } from '@material-ui/core'
 import { motion } from 'framer-motion'
 import { pageVariantHorizontal } from '../../utils/pageTransition'
+import materialLogo from '../../images/materialLogo.png'
 
 import { useStyles } from './styles'
 import SkillIcons from './SkillIcons'
@@ -48,7 +49,7 @@ const Skills = () => {
       title: 'SASS',
     },
     {
-      icon: 'https://material-ui.com/static/logo.png',
+      icon: materialLogo,
       title: 'Material-UI',
     },
     {
