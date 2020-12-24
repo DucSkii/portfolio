@@ -49,7 +49,7 @@ const DrawerButton = ({ children, navigation, Text }) => {
         >
           {children}
         </Button>
-        <Typography color='primary'>{Text}</Typography>
+        <Typography color='primary' onClick={pageLoad}>{Text}</Typography>
       </div>
     )
   }
