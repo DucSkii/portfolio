@@ -43,6 +43,12 @@ export const useStyles = makeStyles(theme => ({
       marginTop: '0',
     },
   },
+  timelineExtra: {
+    [theme.breakpoints.up('md')]: {
+      marginLeft: '15px',
+      marginTop: '0',
+    },
+  },
   modal: {
     position: 'absolute',
     display: 'flex',

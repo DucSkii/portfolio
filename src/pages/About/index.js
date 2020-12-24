@@ -112,7 +112,7 @@ const About = () => {
               {renderText()}
             </Grid>
             <Grid container item xs={12} md={6}
-              style={{ justifyContent: 'center', alignContent: 'flex-start' }}
+              style={{ alignItems: 'center', flexDirection: 'column' }}
             >
               <Typography
                 variant='h5'
@@ -121,20 +121,30 @@ const About = () => {
                   fontFamily: 'Roboto',
                   letterSpacing: '2px',
                   textAlign: 'center',
-                  marginBottom: '5px',
                   fontSize: '20px',
-                  alignSelf: 'flex-end'
                 }}
               >
                 TIMELINE
             </Typography>
+              <Typography
+                variant='h5'
+                className={classes.timelineExtra}
+                style={{
+                  fontFamily: 'Roboto',
+                  letterSpacing: '2px',
+                  textAlign: 'center',
+                  marginBottom: '5px',
+                  fontSize: '12px',
+                }}
+              >
+                CLICK TO EXPAND
+            </Typography>
               <img src={timeline} alt='timeline'
-                className={classes.timeline}
+                className={classes.timelineExtra}
                 onClick={() => setOpen(true)}
                 style={{
                   objectFit: 'contain',
                   width: '100%',
-                  alignSelf: 'flex-start',
                 }}
               />
             </Grid>
