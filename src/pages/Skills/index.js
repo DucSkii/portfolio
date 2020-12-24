@@ -3,6 +3,7 @@ import { Grid, Typography } from '@material-ui/core'
 import { motion } from 'framer-motion'
 import { pageVariantHorizontal } from '../../utils/pageTransition'
 import materialLogo from '../../images/materialLogo.png'
+import { Link } from 'react-router-dom'
 
 import { useStyles } from './styles'
 import SkillIcons from './SkillIcons'
@@ -135,7 +136,7 @@ const Skills = () => {
                 className={classes.skillsText}
                 style={{ marginTop: '20px' }}
               >
-                Visit my <a href='https://www.linkedin.com/in/ducviet-dao-898457202/' style={{ color: '#707cc3', fontWeight: 'bold' }}>LinkedIn</a> / <a href='https://github.com/DucSkii' style={{ color: '#707cc3', fontWeight: 'bold' }}>GitHub</a> profile for more details or just contact me.
+                Visit my <a href='https://www.linkedin.com/in/ducviet-dao-898457202/' style={{ color: '#707cc3', fontWeight: 'bold' }}>LinkedIn</a> / <a href='https://github.com/DucSkii' style={{ color: '#707cc3', fontWeight: 'bold' }}>GitHub</a> profile for more details or just <Link to='/contact' style={{ color: '#707cc3', fontWeight: 'bold' }}>contact</Link> me.
               </Typography>
             </Grid>
             <Grid item xs={12} className={classes.gap} />
