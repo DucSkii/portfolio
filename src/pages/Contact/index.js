@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
-import { Grid, Typography } from '@material-ui/core'
+import React, { useState, useEffect } from 'react'
+import { Grid, Typography, Button } from '@material-ui/core'
 import { motion } from 'framer-motion'
 import { pageVariantHorizontal } from '../../utils/pageTransition'
 import Form from '../../components/Form'
 import ReactMapGl, { Marker } from 'react-map-gl'
 import { apiKey } from '../../Keys/mapboxApi.js'
 import RoomIcon from '@material-ui/icons/Room'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import ExpandLessIcon from '@material-ui/icons/ExpandLess'
 
 import { useStyles } from './styles'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 const Contact = () => {
 
@@ -16,9 +19,29 @@ const Contact = () => {
     latitude: 51.4624692,
     longitude: 0.0351483,
     zoom: 11,
-    width: '100vw',
-    height: '100%vh',
+    width: '100%',
+    height: '100vh',
   })
+  const [open, setOpen] = useState(false)
+  const [mapStyle, setMapStyle] = useState({})
+  const [buttonStyle, setButtonStyle] = useState({})
+  const [loaded, setLoaded] = useState(false)
+
+  useEffect(() => {
+    if (open === true) {
+      setMapStyle({ position: 'fixed' })
+      setButtonStyle({ display: 'none' })
+    } else {
+      setMapStyle({})
+      setButtonStyle({})
+    }
+  }, [open])
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoaded(true)
+    }, 1000)
+  }, [])
 
   const title = 'Contact me'.split('')
 
@@ -27,6 +50,91 @@ const Contact = () => {
     'London,',
     '07990877427,',
   ]
+
+  const renderMap = () => {
+    if (loaded === false) {
+      return (
+        <div className={classes.loading}>
+          <Typography>Loading...</Typography>
+        </div>
+      )
+    }
+    return (
+      <>
+        <div className={classes.mapButtonContainer}
+          style={buttonStyle}
+        >
+          <Button
+            variant='contained'
+            color='secondary'
+            onClick={() => setOpen(true)}
+            className={classes.mapButton}
+          >
+            <ExpandLessIcon />
+          </Button>
+        </div>
+        {open ? (
+          <Button
+            variant='contained'
+            color='secondary'
+            onClick={() => setOpen(false)}
+            className={classes.mapButtonClose}
+          >
+            <ExpandMoreIcon />
+          </Button>
+        ) : (
+            <div></div>
+          )}
+        <ReactMapGl
+          {...viewport}
+          mapboxApiAccessToken={apiKey}
+          onViewportChange={viewport => setViewport(viewport)}
+          mapStyle="mapbox://styles/ducskii/ckj4erzd2ch0f19rpqivek237"
+        >
+          <Marker
+            latitude={51.4624692}
+            longitude={0.0351483}
+          >
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <RoomIcon fontSize='large' />
+              <div
+                style={{
+                  width: '180px',
+                  height: '100px',
+                  borderRadius: '10px',
+                  backgroundColor: '#000000',
+                  padding: '10px',
+                }}
+              >
+                {contactInfo.map((info, index) => {
+                  return (
+                    <Typography key={index}
+                      style={{
+                        fontFamily: 'Roboto',
+                        color: '#ffffff',
+                        fontWeight: 'bold',
+                      }}
+                    >
+                      {info}
+                    </Typography>
+                  )
+                })}
+                <Typography
+                  style={{
+                    fontFamily: 'Roboto',
+                    color: '#8dd0f4',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  @: ducvietdao@live.co.uk
+          </Typography>
+              </div>
+            </div>
+          </Marker>
+        </ReactMapGl>
+      </>
+    )
+  }
 
   return (
     <motion.div
@@ -37,7 +145,7 @@ const Contact = () => {
       className={classes.Contact}
     >
       <Grid container style={{ height: '100vh' }}>
-        <Grid container item md={5}>
+        <Grid container item md={5} xs={12} className={classes.contactInfo}>
           <Grid container item md={12} className={classes.marginLeftWrapper}>
             <Grid item xs={12} />
             <Grid container item xs={12} className={classes.marginLeftContainer}>
@@ -50,7 +158,6 @@ const Contact = () => {
                   style={{
                     cursor: 'default',
                     userSelect: 'none',
-                    // marginLeft: '7.5%',
                   }}
                 >
                   {title.map((letter, index) => {
@@ -93,54 +200,8 @@ const Contact = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid container item md={7}>
-          <ReactMapGl
-            {...viewport}
-            mapboxApiAccessToken={apiKey}
-            onViewportChange={viewport => setViewport(viewport)}
-            mapStyle="mapbox://styles/ducskii/ckj4erzd2ch0f19rpqivek237"
-          >
-            <Marker
-              latitude={51.4624692}
-              longitude={0.0351483}
-            >
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <RoomIcon fontSize='large' />
-                <div
-                  style={{
-                    width: '180px',
-                    height: '100px',
-                    borderRadius: '10px',
-                    backgroundColor: '#000000',
-                    padding: '10px',
-                  }}
-                >
-                  {contactInfo.map((info, index) => {
-                    return (
-                      <Typography key={index}
-                        style={{
-                          fontFamily: 'Roboto',
-                          color: '#ffffff',
-                          fontWeight: 'bold',
-                        }}
-                      >
-                        {info}
-                      </Typography>
-                    )
-                  })}
-                  <Typography
-                    style={{
-                      fontFamily: 'Roboto',
-                      color: '#8dd0f4',
-                      fontWeight: 'bold',
-                    }}
-                  >
-                    @: ducvietdao@live.co.uk
-                  </Typography>
-                </div>
-              </div>
-            </Marker>
-          </ReactMapGl>
+        <Grid container item md={7} xs={12} className={classes.map} style={mapStyle}>
+          {renderMap()}
         </Grid>
       </Grid>
     </motion.div>

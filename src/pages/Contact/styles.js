@@ -48,4 +48,42 @@ export const useStyles = makeStyles(theme => ({
       textAlign: 'center',
     },
   },
+  map: {
+    top: '0',
+    left: '0',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  mapButtonContainer: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    width: '100%',
+    height: '30px',
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    }
+  },
+  mapButton: {
+    borderRadius: '0',
+  },
+  mapButtonClose: {
+    position: 'fixed',
+    top: '0',
+    right: '0',
+    zIndex: '10',
+  },
+  contactInfo: {
+    height: '80%',
+    [theme.breakpoints.up('md')]: {
+      height: '100vh',
+    },
+  },
+  loading: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    [theme.breakpoints.up('md')]: {
+      height: '100vh',
+    },
+  }
 }))
