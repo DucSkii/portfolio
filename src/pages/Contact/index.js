@@ -152,7 +152,10 @@ const Contact = () => {
       variants={pageVariantHorizontal}
       className={classes.Contact}
     >
-      <div className={classes.emailPopup} style={emailPopupStyle}>
+      <div aria-hidden="true" className={classes.emailPopupRight} style={emailPopupStyle}>
+        <Typography style={{ color: '#ffffff' }}>Email Sent</Typography>
+      </div>
+      <div aria-hidden="true" className={classes.emailPopupLeft} style={emailPopupStyle}>
         <Typography style={{ color: '#ffffff' }}>Email Sent</Typography>
       </div>
       <Grid container style={{ height: '100vh' }}>
