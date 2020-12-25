@@ -25,6 +25,7 @@ const Contact = () => {
   const [open, setOpen] = useState(false)
   const [mapStyle, setMapStyle] = useState({})
   const [buttonStyle, setButtonStyle] = useState({})
+  const [emailPopupStyle, setEmailPopupStyle] = useState({})
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
@@ -42,6 +43,13 @@ const Contact = () => {
       setLoaded(true)
     }, 1000)
   }, [])
+
+  const showEmailPopup = () => {
+    setEmailPopupStyle({ opacity: '1' })
+    setTimeout(() => {
+      setEmailPopupStyle({})
+    }, 3000)
+  }
 
   const title = 'Contact me'.split('')
 
@@ -144,6 +152,9 @@ const Contact = () => {
       variants={pageVariantHorizontal}
       className={classes.Contact}
     >
+      <div className={classes.emailPopup} style={emailPopupStyle}>
+        <Typography style={{ color: '#ffffff' }}>Email Sent</Typography>
+      </div>
       <Grid container style={{ height: '100vh' }}>
         <Grid container item md={5} xs={12} className={classes.contactInfo}>
           <Grid container item md={12} className={classes.marginLeftWrapper}>
@@ -193,7 +204,7 @@ const Contact = () => {
               <Grid item xs={1} />
               <Grid container item xs={10}>
                 <Grid item xs={12}>
-                  <Form />
+                  <Form showEmailPopup={showEmailPopup} />
                 </Grid>
               </Grid>
               <Grid item xs={1} />

@@ -4,12 +4,13 @@ import emailjs from 'emailjs-com'
 
 import { useStyles } from './styles'
 
-const Form = () => {
+const Form = ({ showEmailPopup }) => {
 
   const classes = useStyles()
 
   const submit = e => {
     e.preventDefault()
+    showEmailPopup()
     emailjs.sendForm('gmail', 'template_ge555rk', e.target, 'user_yKZ9SB6Rxi2GVn3gfvGKA')
       .then((result) => {
         console.log(result.text)
