@@ -9,7 +9,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import ExpandLessIcon from '@material-ui/icons/ExpandLess'
 
 import { useStyles } from './styles'
-import 'mapbox-gl/dist/mapbox-gl.css'
 
 const Contact = () => {
 
