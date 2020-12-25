@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import { pageVariantHorizontal } from '../../utils/pageTransition'
 import Form from '../../components/Form'
 import ReactMapGl, { Marker } from 'react-map-gl'
-import { apiKey } from '../../Keys/mapboxApi.js'
 import RoomIcon from '@material-ui/icons/Room'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import ExpandLessIcon from '@material-ui/icons/ExpandLess'
@@ -95,7 +94,7 @@ const Contact = () => {
           )}
         <ReactMapGl
           {...viewport}
-          mapboxApiAccessToken={apiKey}
+          mapboxApiAccessToken="pk.eyJ1IjoiZHVjc2tpaSIsImEiOiJja2o0ZWUybG8ya3BrMnVueHh1eG45YWFkIn0.CvaMljSrY7bN1tifU0DU7Q"
           onViewportChange={viewport => setViewport(viewport)}
           mapStyle="mapbox://styles/ducskii/ckj4erzd2ch0f19rpqivek237"
         >
