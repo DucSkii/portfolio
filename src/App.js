@@ -37,7 +37,7 @@ const App = () => {
       },
       secondary: {
         main: '#8dd0f4'
-      }
+      },
     },
     breakpoints: {
       values: {
@@ -46,8 +46,23 @@ const App = () => {
         md: 960,
         lg: 1780,
         xl: 1920,
-      }
-    }
+      },
+    },
+    overrides: {
+      MuiInput: {
+        underline: {
+          '&:before': {
+            borderBottom: '1px solid #707cc3'
+          },
+          '&:after': {
+            borderBottom: '2px solid #8dd0f4'
+          },
+          '&:hover:not(.Mui-disabled):before': {
+            borderBottom: '2px solid #707cc3'
+          }
+        },
+      },
+    },
     // xs, extra-small: 0px
     // sm, small: 600px
     // md, medium: 960px
