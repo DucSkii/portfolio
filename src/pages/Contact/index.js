@@ -1,16 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Grid, Typography } from '@material-ui/core'
 import { motion } from 'framer-motion'
 import { pageVariantHorizontal } from '../../utils/pageTransition'
 import Form from '../../components/Form'
+import ReactMapGl, { Marker } from 'react-map-gl'
+import { apiKey } from '../../Keys/mapboxApi.js'
+import RoomIcon from '@material-ui/icons/Room'
 
 import { useStyles } from './styles'
 
 const Contact = () => {
 
   const classes = useStyles()
+  const [viewport, setViewport] = useState({
+    latitude: 51.4624692,
+    longitude: 0.0351483,
+    zoom: 11,
+    width: '100vw',
+    height: '100%vh',
+  })
 
   const title = 'Contact me'.split('')
+
+  const contactInfo = [
+    'Ducviet Dao,',
+    'London,',
+    '07990877427,',
+  ]
 
   return (
     <motion.div
@@ -77,8 +93,54 @@ const Contact = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid container item md={7} style={{ backgroundColor: '#ffffff' }}>
-
+        <Grid container item md={7}>
+          <ReactMapGl
+            {...viewport}
+            mapboxApiAccessToken={apiKey}
+            onViewportChange={viewport => setViewport(viewport)}
+            mapStyle="mapbox://styles/ducskii/ckj4erzd2ch0f19rpqivek237"
+          >
+            <Marker
+              latitude={51.4624692}
+              longitude={0.0351483}
+            >
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <RoomIcon fontSize='large' />
+                <div
+                  style={{
+                    width: '180px',
+                    height: '100px',
+                    borderRadius: '10px',
+                    backgroundColor: '#000000',
+                    padding: '10px',
+                  }}
+                >
+                  {contactInfo.map((info, index) => {
+                    return (
+                      <Typography key={index}
+                        style={{
+                          fontFamily: 'Roboto',
+                          color: '#ffffff',
+                          fontWeight: 'bold',
+                        }}
+                      >
+                        {info}
+                      </Typography>
+                    )
+                  })}
+                  <Typography
+                    style={{
+                      fontFamily: 'Roboto',
+                      color: '#8dd0f4',
+                      fontWeight: 'bold',
+                    }}
+                  >
+                    @: ducvietdao@live.co.uk
+                  </Typography>
+                </div>
+              </div>
+            </Marker>
+          </ReactMapGl>
         </Grid>
       </Grid>
     </motion.div>
