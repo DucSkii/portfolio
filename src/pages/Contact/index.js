@@ -7,24 +7,20 @@ import ReactMapGl, { Marker } from 'react-map-gl'
 import RoomIcon from '@material-ui/icons/Room'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import ExpandLessIcon from '@material-ui/icons/ExpandLess'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 import { useStyles } from './styles'
 
 const Contact = () => {
 
   const classes = useStyles()
-  const [viewport, setViewport] = useState({
-    latitude: 51.4624692,
-    longitude: 0.0351483,
-    zoom: 11,
-    width: '100%',
-    height: '100vh',
-  })
   const [open, setOpen] = useState(false)
   const [mapStyle, setMapStyle] = useState({})
   const [buttonStyle, setButtonStyle] = useState({})
   const [emailPopupStyle, setEmailPopupStyle] = useState({})
   const [loaded, setLoaded] = useState(false)
+  const mediumScreen = useMediaQuery(theme => theme.breakpoints.up('md'))
+  const [viewport, setViewport] = useState({})
 
   useEffect(() => {
     if (open === true) {
@@ -35,12 +31,32 @@ const Contact = () => {
       setButtonStyle({})
     }
   }, [open])
-
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true)
     }, 1000)
   }, [])
+
+  useEffect(() => {
+    console.log('mediumScreen', mediumScreen)
+    if (mediumScreen === true) {
+      setViewport({
+        latitude: 51.45426846731866,
+        longitude: 0.07270684547610262,
+        zoom: 11,
+        width: '60vw',
+        height: '100vh',
+      })
+    } else {
+      setViewport({
+        latitude: 51.45426846731866,
+        longitude: 0.07270684547610262,
+        zoom: 11,
+        width: '100%',
+        height: '100vh',
+      })
+    }
+  }, [mediumScreen])
 
   const showEmailPopup = () => {
     setEmailPopupStyle({ opacity: '1' })
@@ -133,7 +149,7 @@ const Contact = () => {
                   }}
                 >
                   @: ducvietdao@live.co.uk
-          </Typography>
+            </Typography>
               </div>
             </div>
           </Marker>

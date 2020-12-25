@@ -11,7 +11,7 @@ export const useStyles = makeStyles(theme => ({
       fontSize: '40px',
     },
     [theme.breakpoints.up('sm')]: {
-      fontSize: '50px',
+      fontSize: '45px',
     },
     [theme.breakpoints.up('lg')]: {
       fontSize: '80px',
@@ -57,7 +57,7 @@ export const useStyles = makeStyles(theme => ({
   mapButtonContainer: {
     display: 'flex',
     justifyContent: 'flex-end',
-    width: '100%',
+    width: '100vw',
     height: '30px',
     [theme.breakpoints.up('md')]: {
       display: 'none',
