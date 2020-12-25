@@ -11,7 +11,7 @@ export const useStyles = makeStyles({
   inputMessage: {
     width: '100%',
     padding: '10px',
-    height: '150px',
+    height: '120px',
     borderColor: 'transparent',
     outline: 'none',
     fontFamily: 'Roboto',

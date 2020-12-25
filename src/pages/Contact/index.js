@@ -20,45 +20,67 @@ const Contact = () => {
       variants={pageVariantHorizontal}
       className={classes.Contact}
     >
-      <Grid container>
-        <Grid item xs={12} className={classes.titleHeight} />
-        <Grid container item xs={12} style={{ marginLeft: '10px' }}>
-          <Typography
-            variant='h2'
-            color='primary'
-            className={classes.letters}
-            style={{
-              cursor: 'default',
-              userSelect: 'none',
-              marginLeft: '7.5%',
-            }}
-          >
-            {title.map((letter, index) => {
-              if (letter === ' ') {
-                return ' '
-              }
-              if (index === 0) {
-                return (
-                  <span className='a' key={index} style={{ marginLeft: '5px' }}>{letter}</span>
-                )
-              }
-              return (
-                <span className='a' key={index}>{letter}</span>
-              )
-            })}
-          </Typography>
-        </Grid>
-        <Grid container item xs={12}>
-          <Grid item xs={1} />
-          <Grid container item xs={10} spacing={5}>
-            <Grid item md={5}>
-              <Form />
+      <Grid container style={{ height: '100vh' }}>
+        <Grid container item md={5}>
+          <Grid container item md={12} className={classes.marginLeftWrapper}>
+            <Grid item xs={12} />
+            <Grid container item xs={12} className={classes.marginLeftContainer}>
+              <Grid item xs={1} />
+              <Grid container item xs={10} className={classes.title}>
+                <Typography
+                  variant='h2'
+                  color='primary'
+                  className={classes.letters}
+                  style={{
+                    cursor: 'default',
+                    userSelect: 'none',
+                    // marginLeft: '7.5%',
+                  }}
+                >
+                  {title.map((letter, index) => {
+                    if (letter === ' ') {
+                      return ' '
+                    }
+                    if (index === 0) {
+                      return (
+                        <span className='a' key={index} style={{ marginLeft: '5px' }}>{letter}</span>
+                      )
+                    }
+                    return (
+                      <span className='a' key={index}>{letter}</span>
+                    )
+                  })}
+                </Typography>
+              </Grid>
+              <Grid item xs={1} />
+              <Grid container item xs={12}>
+                <Grid item xs={1} />
+                <Grid container item xs={10} style={{ flexDirection: 'column' }}>
+                  <Typography className={classes.description}>
+                    If you have any requests or questions, don't hesitate to contact me using the form!
+                  </Typography>
+                  <Typography className={classes.description}>
+                    Alternatively, you can get through to me via mobile.
+                  </Typography>
+                  <Grid item xs={1} />
+                </Grid>
+              </Grid>
             </Grid>
-            <Grid item md={7}>
-              MAP
+            <Grid container item xs={12}>
+              <Grid item xs={1} />
+              <Grid container item xs={10}>
+                <Grid item xs={12}>
+                  <Form />
+                </Grid>
+              </Grid>
+              <Grid item xs={1} />
             </Grid>
           </Grid>
-          <Grid item xs={1} />
+        </Grid>
+        <Grid container item md={7} style={{ backgroundColor: '#ffffff' }}>
+          {/* <img src='https://i.gyazo.com/a9089a00b089d29c0a6375ab86875a6e.png' alt='map' 
+          style={{objectFit: 'contain', width: '100%', height: '100vh'}}
+          /> */}
         </Grid>
       </Grid>
     </motion.div>

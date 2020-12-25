@@ -18,7 +18,7 @@ const Form = () => {
 
   return (
     <div className={classes.Form}>
-      <Paper style={{ backgroundColor: '#707cc3', padding: '15px' }}>
+      <Paper style={{ backgroundColor: '#4960a9', padding: '15px' }}>
         <form onSubmit={submit}>
           <Grid container spacing={2}>
             <Grid item xs={6}>
