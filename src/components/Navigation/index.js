@@ -22,12 +22,12 @@ const Navigation = () => {
 
   const classes = useStyles()
   const dispatch = useDispatch()
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
   const [style, setStyle] = useState({})
 
   useEffect(() => {
-    if (open === true) {
-      setStyle({ width: '170px' })
+    if (open === false) {
+      setStyle({ width: '60px' })
     } else {
       setStyle({})
     }

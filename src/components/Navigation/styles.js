@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 export const useStyles = makeStyles(theme => ({
   container: {
     height: '100vh',
-    width: '60px',
+    width: '170px',
     backgroundColor: '#f3f5fd',
     display: 'flex',
     flexDirection: 'column',

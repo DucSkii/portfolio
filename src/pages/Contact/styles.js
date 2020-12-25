@@ -90,7 +90,7 @@ export const useStyles = makeStyles(theme => ({
     position: 'fixed',
     top: '5px',
     right: '5px',
-    opacity: '1',
+    opacity: '0',
     transition: 'opacity 1s ease-in',
     padding: '10px',
     backgroundColor: '#707cc3',
