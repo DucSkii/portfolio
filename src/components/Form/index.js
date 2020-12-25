@@ -1,19 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Grid, Paper, Input, Button } from '@material-ui/core'
+import emailjs from 'emailjs-com'
 
 import { useStyles } from './styles'
 
 const Form = () => {
 
   const classes = useStyles()
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [subject, setSubject] = useState('')
-  const [message, setMessage] = useState('')
 
   const submit = e => {
     e.preventDefault()
-    console.log('submitted')
+    emailjs.sendForm('gmail', 'template_ge555rk', e.target, 'user_yKZ9SB6Rxi2GVn3gfvGKA')
+      .then((result) => {
+        console.log(result.text)
+      }, (error) => {
+        console.log(error.text)
+      })
+    e.target.reset()
   }
 
   return (
@@ -26,9 +29,9 @@ const Form = () => {
                 <Input
                   required
                   placeholder='Name'
+                  type='text'
                   className={classes.input}
-                  value={name}
-                  onChange={e => setName(e.target.value)}
+                  name='name'
                 />
               </Paper>
             </Grid>
@@ -39,8 +42,7 @@ const Form = () => {
                   placeholder='Email'
                   type='email'
                   className={classes.input}
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
+                  name='email'
                 />
               </Paper>
             </Grid>
@@ -49,9 +51,9 @@ const Form = () => {
                 <Input
                   required
                   placeholder='Subject'
+                  type='text'
                   className={classes.input}
-                  value={subject}
-                  onChange={e => setSubject(e.target.value)}
+                  name='subject'
                 />
               </Paper>
             </Grid>
@@ -61,8 +63,7 @@ const Form = () => {
                   required
                   placeholder='Message'
                   className={classes.inputMessage}
-                  value={message}
-                  onChange={e => setMessage(e.target.value)}
+                  name='message'
                 />
               </Paper>
             </Grid>

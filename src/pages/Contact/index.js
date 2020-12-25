@@ -78,9 +78,7 @@ const Contact = () => {
           </Grid>
         </Grid>
         <Grid container item md={7} style={{ backgroundColor: '#ffffff' }}>
-          {/* <img src='https://i.gyazo.com/a9089a00b089d29c0a6375ab86875a6e.png' alt='map' 
-          style={{objectFit: 'contain', width: '100%', height: '100vh'}}
-          /> */}
+
         </Grid>
       </Grid>
     </motion.div>
