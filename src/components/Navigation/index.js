@@ -34,7 +34,6 @@ const Navigation = () => {
   }, [open])
 
   const renderSocials = () => {
-
     if (open === true) {
       return (
         <div className={classes.socials}>

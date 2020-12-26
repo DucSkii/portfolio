@@ -38,7 +38,6 @@ const Contact = () => {
   }, [])
 
   useEffect(() => {
-    console.log('mediumScreen', mediumScreen)
     if (mediumScreen === true) {
       setViewport({
         latitude: 51.45426846731866,
