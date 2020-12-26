@@ -38,11 +38,6 @@ const Navigation = () => {
       return (
         <div className={classes.socials}>
           <a href='https://github.com/DucSkii'
-            style={{
-              display: 'flex',
-              textDecoration: 'none',
-              alignItems: 'center',
-            }}
           >
             <Button className={classes.buttonSocialsExpanded}>
               <div className={classes.buttonSocials}>
@@ -52,11 +47,6 @@ const Navigation = () => {
             </Button>
           </a>
           <a href='https://www.linkedin.com/in/ducviet-dao-898457202/'
-            style={{
-              display: 'flex',
-              textDecoration: 'none',
-              alignItems: 'center',
-            }}
           >
             <Button className={classes.buttonSocialsExpanded}>
               <div className={classes.buttonSocials}>
@@ -66,12 +56,6 @@ const Navigation = () => {
             </Button>
           </a>
           <a href='https://www.instagram.com/ducskii/'
-            style={{
-              display: 'flex',
-              textDecoration: 'none',
-              alignItems: 'center',
-              marginBottom: '30px',
-            }}
           >
             <Button className={classes.buttonSocialsExpanded} >
               <div className={classes.buttonSocials}>

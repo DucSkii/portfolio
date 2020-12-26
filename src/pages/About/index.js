@@ -34,7 +34,7 @@ const About = () => {
     ' ',
     'Highly motivated individual who is naturally analytically minded with a keen eye for detail. Fan of Boxing, Basketball, eSports and Animation.',
     ' ',
-    'Since moving into web development I was quickly drawn into the frontend side of production. The idea of being able to implement some artistic skills was what got me started.',
+    'Since moving into web development I was quickly drawn into the front end side of production. The idea of being able to implement some artistic skills was what got me started.',
     ' ',
     'Always looking forward to working on ambitious projects with positive people.',
   ]

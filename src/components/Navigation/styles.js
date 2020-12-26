@@ -20,6 +20,12 @@ export const useStyles = makeStyles(theme => ({
   socials: {
     display: 'flex',
     flexDirection: 'column',
+    '&>a:last-child': {
+      marginBottom: '30px',
+    },
+    '&>a': {
+      textDecoration: 'none',
+    },
   },
   burgerMenuContainer: {
     position: 'absolute',

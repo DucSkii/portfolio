@@ -31,6 +31,7 @@ const Contact = () => {
       setButtonStyle({})
     }
   }, [open])
+
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true)
