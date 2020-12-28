@@ -1,6 +1,7 @@
 import React from 'react'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import { Switch, Route, useLocation } from 'react-router-dom'
+import { Typography } from '@material-ui/core'
 import Home from './pages/Home'
 import Navigation from './components/Navigation'
 import About from './pages/About'
@@ -11,9 +12,10 @@ import Drawer from '@material-ui/core/Drawer'
 import DrawerBar from './components/DrawerBar'
 import { useSelector, useDispatch } from 'react-redux'
 import { setDrawerFalse } from './redux/ducks/drawer'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import DuckAnimation from './components/DuckAnimation'
 import duckAnimationWave from './video/duck-animation-wave.gif'
+import { pageVariantHorizontal } from './utils/pageTransition'
 
 import { useStyles } from './styles'
 
@@ -21,6 +23,7 @@ const App = () => {
 
   const classes = useStyles()
   const open = useSelector(state => state.drawer.open)
+  const emailShown = useSelector(state => state.emailSent.emailSent)
   const dispatch = useDispatch()
   const location = useLocation()
 
@@ -74,6 +77,20 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <div className={classes.app}>
         <ThemeProvider theme={theme}>
+          {
+            emailShown &&
+            <motion.div
+              initial="out"
+              animate="in"
+              exit="out"
+              variants={pageVariantHorizontal}
+              className={classes.emailPopupLeft}
+            >
+              <Typography style={{ color: '#ffffff' }}>
+                EMAIL SENT
+            </Typography>
+            </motion.div>
+          }
           <Drawer
             open={open}
             anchor='left'

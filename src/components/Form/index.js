@@ -1,16 +1,19 @@
 import React from 'react'
 import { Grid, Paper, Input, Button } from '@material-ui/core'
 import emailjs from 'emailjs-com'
+import { toggleEmailSent } from '../../redux/ducks/emailSent'
+import { useDispatch } from 'react-redux'
 
 import { useStyles } from './styles'
 
-const Form = ({ showEmailPopup }) => {
+const Form = () => {
 
   const classes = useStyles()
+  const dispatch = useDispatch()
 
   const submit = e => {
     e.preventDefault()
-    showEmailPopup()
+    dispatch(toggleEmailSent())
     emailjs.sendForm('gmail', 'template_ge555rk', e.target, 'user_yKZ9SB6Rxi2GVn3gfvGKA')
       .then((result) => {
         console.log(result.text)
