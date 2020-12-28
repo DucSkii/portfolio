@@ -62,7 +62,7 @@ const Form = () => {
               </Paper>
             </Grid>
             <Grid item xs={12}>
-              <Paper>
+              <Paper style={{ overflow: 'hidden' }}>
                 <textarea
                   required
                   placeholder='Message'

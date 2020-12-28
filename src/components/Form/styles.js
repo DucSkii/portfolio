@@ -19,7 +19,6 @@ export const useStyles = makeStyles(theme => ({
     borderColor: 'transparent',
     outline: 'none',
     fontFamily: 'Roboto',
-    overflowY: 'auto',
     fontSize: '12px',
     height: '50px',
     [theme.breakpoints.up('md')]: {

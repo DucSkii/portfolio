@@ -10,6 +10,7 @@ export const useStyles = makeStyles(theme => ({
     justifyContent: 'space-between',
     zIndex: '5',
     transition: '0.5s ease',
+    overflow: 'hidden',
     [theme.breakpoints.up('xs')]: {
       display: 'none',
     },

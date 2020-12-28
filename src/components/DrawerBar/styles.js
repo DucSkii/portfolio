@@ -9,6 +9,7 @@ export const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'space-between',
     zIndex: '5',
+    overflow: 'hidden',
   },
   socials: {
     display: 'flex',

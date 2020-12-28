@@ -26,6 +26,7 @@ const Drawer = () => {
             objectFit: 'contain',
             width: '100%',
             padding: '15px',
+            overflow: 'hidden',
           }}
         />
       </DrawerButton>

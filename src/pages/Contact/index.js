@@ -3,11 +3,10 @@ import { Grid, Typography, Button } from '@material-ui/core'
 import { motion } from 'framer-motion'
 import { pageVariantHorizontal } from '../../utils/pageTransition'
 import Form from '../../components/Form'
-import ReactMapGl, { Marker } from 'react-map-gl'
-import RoomIcon from '@material-ui/icons/Room'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import ExpandLessIcon from '@material-ui/icons/ExpandLess'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
+import Map from '../../components/Map'
 
 import { useStyles } from './styles'
 
@@ -15,18 +14,14 @@ const Contact = () => {
 
   const classes = useStyles()
   const [open, setOpen] = useState(false)
-  const [mapStyle, setMapStyle] = useState({})
   const [buttonStyle, setButtonStyle] = useState({})
   const [loaded, setLoaded] = useState(false)
   const mediumScreen = useMediaQuery(theme => theme.breakpoints.up('md'))
-  const [viewport, setViewport] = useState({})
 
   useEffect(() => {
     if (open === true) {
-      setMapStyle({ position: 'fixed' })
       setButtonStyle({ display: 'none' })
     } else {
-      setMapStyle({})
       setButtonStyle({})
     }
   }, [open])
@@ -37,26 +32,6 @@ const Contact = () => {
     }, 1000)
   }, [])
 
-  useEffect(() => {
-    if (mediumScreen === true) {
-      setViewport({
-        latitude: 51.45426846731866,
-        longitude: 0.07270684547610262,
-        zoom: 11,
-        width: '60vw',
-        height: '100vh',
-      })
-    } else {
-      setViewport({
-        latitude: 51.45426846731866,
-        longitude: 0.07270684547610262,
-        zoom: 11,
-        width: '100%',
-        height: '100vh',
-      })
-    }
-  }, [mediumScreen])
-
   const title = 'Contact me'.split('')
 
   const contactInfo = [
@@ -64,6 +39,11 @@ const Contact = () => {
     'London,',
     '07990877427,',
   ]
+
+  // const center = {
+  //   lat: 51.45426846731866,
+  //   lng: 0.07270684547610262,
+  // }
 
   const renderMap = () => {
     if (loaded === false) {
@@ -99,53 +79,7 @@ const Contact = () => {
         ) : (
             <div></div>
           )}
-        <ReactMapGl
-          {...viewport}
-          mapboxApiAccessToken="pk.eyJ1IjoiZHVjc2tpaSIsImEiOiJja2o0ZWUybG8ya3BrMnVueHh1eG45YWFkIn0.CvaMljSrY7bN1tifU0DU7Q"
-          onViewportChange={viewport => setViewport(viewport)}
-          mapStyle="mapbox://styles/ducskii/ckj4erzd2ch0f19rpqivek237"
-        >
-          <Marker
-            latitude={51.4624692}
-            longitude={0.0351483}
-          >
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <RoomIcon fontSize='large' />
-              <div
-                style={{
-                  width: '180px',
-                  height: '100px',
-                  borderRadius: '10px',
-                  backgroundColor: '#000000',
-                  padding: '10px',
-                }}
-              >
-                {contactInfo.map((info, index) => {
-                  return (
-                    <Typography key={index}
-                      style={{
-                        fontFamily: 'Roboto',
-                        color: '#ffffff',
-                        fontWeight: 'bold',
-                      }}
-                    >
-                      {info}
-                    </Typography>
-                  )
-                })}
-                <Typography
-                  style={{
-                    fontFamily: 'Roboto',
-                    color: '#8dd0f4',
-                    fontWeight: 'bold',
-                  }}
-                >
-                  @: ducvietdao@live.co.uk
-            </Typography>
-              </div>
-            </div>
-          </Marker>
-        </ReactMapGl>
+        <Map />
       </>
     )
   }
@@ -214,7 +148,7 @@ const Contact = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid container item md={7} xs={12} className={classes.map} style={mapStyle}>
+        <Grid container item md={7} xs={12} className={classes.map}>
           {renderMap()}
         </Grid>
       </Grid>
