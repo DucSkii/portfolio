@@ -22,7 +22,7 @@ const Skills = () => {
 
   const skills = [
     {
-      icon: 'https://cdn.icon-icons.com/icons2/2108/PNG/512/javascript_icon_130900.png',
+      icon: 'https://cdn.iconscout.com/icon/free/png-256/javascript-2038874-1720087.png',
       title: 'JavaScript',
     },
     {
