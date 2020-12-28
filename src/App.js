@@ -84,7 +84,7 @@ const App = () => {
               animate="in"
               exit="out"
               variants={pageVariantHorizontal}
-              className={classes.emailPopupLeft}
+              className={classes.emailPopup}
             >
               <Typography style={{ color: '#ffffff' }}>
                 EMAIL SENT

@@ -4,7 +4,7 @@ export const useStyles = makeStyles(theme => ({
   app: {
     display: 'flex',
   },
-  emailPopupLeft: {
+  emailPopup: {
     position: 'fixed',
     top: '5px',
     right: '5px',
