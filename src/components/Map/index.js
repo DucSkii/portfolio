@@ -40,14 +40,27 @@ const LeafletMap = ({ open, setOpen }) => {
             <ExpandMoreIcon />
           </Button>
         ) : (
-            <Button
-              variant='contained'
-              color='secondary'
-              onClick={() => setOpen(true)}
-              className={classes.mapButton}
-            >
-              <ExpandLessIcon />
-            </Button>
+            <>
+              <Button
+                variant='contained'
+                color='secondary'
+                onClick={() => setOpen(true)}
+                className={classes.mapButton}
+              >
+                <ExpandLessIcon />
+              </Button>
+              <div style=
+                {{
+                  backgroundColor: 'transparent',
+                  width: '100vw',
+                  position: 'fixed',
+                  zIndex: '10000',
+                  height: '16vh',
+                  bottom: '0',
+                  userSelect: 'none',
+                }}
+              />
+            </>
           )}
       </div>
       <MapContainer center={[51.4624692, 0.0351483]} zoom={11} style={{ height: '100%' }}>
