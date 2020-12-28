@@ -54,24 +54,6 @@ export const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'column',
   },
-  mapButtonContainer: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    width: '100vw',
-    height: '30px',
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
-    }
-  },
-  mapButton: {
-    borderRadius: '0',
-  },
-  mapButtonClose: {
-    position: 'fixed',
-    top: '0',
-    right: '0',
-    zIndex: '10',
-  },
   contactInfo: {
     height: '80%',
     [theme.breakpoints.up('md')]: {

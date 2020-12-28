@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { Grid, Typography, Button } from '@material-ui/core'
+import { Grid, Typography } from '@material-ui/core'
 import { motion } from 'framer-motion'
 import { pageVariantHorizontal } from '../../utils/pageTransition'
 import Form from '../../components/Form'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import ExpandLessIcon from '@material-ui/icons/ExpandLess'
-import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Map from '../../components/Map'
 
 import { useStyles } from './styles'
@@ -14,17 +11,7 @@ const Contact = () => {
 
   const classes = useStyles()
   const [open, setOpen] = useState(false)
-  const [buttonStyle, setButtonStyle] = useState({})
   const [loaded, setLoaded] = useState(false)
-  const mediumScreen = useMediaQuery(theme => theme.breakpoints.up('md'))
-
-  useEffect(() => {
-    if (open === true) {
-      setButtonStyle({ display: 'none' })
-    } else {
-      setButtonStyle({})
-    }
-  }, [open])
 
   useEffect(() => {
     setTimeout(() => {
@@ -33,17 +20,6 @@ const Contact = () => {
   }, [])
 
   const title = 'Contact me'.split('')
-
-  const contactInfo = [
-    'Ducviet Dao,',
-    'London,',
-    '07990877427,',
-  ]
-
-  // const center = {
-  //   lat: 51.45426846731866,
-  //   lng: 0.07270684547610262,
-  // }
 
   const renderMap = () => {
     if (loaded === false) {
@@ -55,31 +31,7 @@ const Contact = () => {
     }
     return (
       <>
-        <div className={classes.mapButtonContainer}
-          style={buttonStyle}
-        >
-          <Button
-            variant='contained'
-            color='secondary'
-            onClick={() => setOpen(true)}
-            className={classes.mapButton}
-          >
-            <ExpandLessIcon />
-          </Button>
-        </div>
-        {open ? (
-          <Button
-            variant='contained'
-            color='secondary'
-            onClick={() => setOpen(false)}
-            className={classes.mapButtonClose}
-          >
-            <ExpandMoreIcon />
-          </Button>
-        ) : (
-            <div></div>
-          )}
-        <Map />
+        <Map open={open} setOpen={setOpen} />
       </>
     )
   }
@@ -132,6 +84,9 @@ const Contact = () => {
                   </Typography>
                   <Typography className={classes.description}>
                     Alternatively, you can get through to me via mobile.
+                  </Typography>
+                  <Typography className={classes.description} style={{ marginTop: '10px', fontWeight: 'bold' }}>
+                    Ducviet Dao . 07990877427 . ducvietdao@live.co.uk
                   </Typography>
                   <Grid item xs={1} />
                 </Grid>
