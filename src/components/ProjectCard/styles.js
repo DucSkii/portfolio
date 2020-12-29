@@ -55,11 +55,12 @@ export const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    width: '50%',
+    width: '80%',
     marginTop: '10px',
     [theme.breakpoints.up('md')]: {
       marginLeft: '20px',
       marginTop: '15px',
+      width: '50%',
     },
   },
   links: {

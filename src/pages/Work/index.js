@@ -16,7 +16,7 @@ const Work = () => {
     previewImg: 'https://camo.githubusercontent.com/49679fcb3fb80256054f206986b4729a0acda04fd6fff81c3c3dcdff14934504/68747470733a2f2f692e6779617a6f2e636f6d2f34346663393966386365303539346639303234336537353266316234633336352e706e67',
     projectLink: 'https://shopping-cart-project-f7cf3.web.app/',
     githubLink: 'https://github.com/DucSkii/shopping-cart',
-    description: 'ThIS PROJECT IS NOT RESPONSIVE. My goal for the eCommerce site was to create a fast single page application that is quick and easy to navigate. Other features I had added were things like filters, option to favourite, scroll to top, pre-selected delivery options.',
+    description: 'ThIS PROJECT IS NOT RESPONSIVE. My goal for the eCommerce site was to create a fast single page application that is quick and easy to navigate. Other features I had added were things like filters, option to favourite, scroll to top, pre-selected delivery options.  The images for the necklace and earrings page have been corrupted, the replacement images do not work as intended. Check out the watches page to have the full experience.',
     time: '2 weeks',
   }
 
