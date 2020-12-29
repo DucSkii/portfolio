@@ -39,4 +39,22 @@ export const useStyles = makeStyles(theme => ({
       display: 'none',
     },
   },
+  hideTitle: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+    },
+  },
+  hide: {
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
+  },
+  hideProjectSeparator: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      height: '0',
+      display: 'flex',
+    },
+  },
 }))

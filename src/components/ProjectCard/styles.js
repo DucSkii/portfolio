@@ -11,10 +11,10 @@ export const useStyles = makeStyles(theme => ({
     width: '100%',
     height: '100%',
     display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
     top: '0',
     left: '0',
+    justifyContent: 'center',
+    alignItems: 'center',
     zIndex: '20',
     cursor: 'pointer'
   },
@@ -86,7 +86,7 @@ export const useStyles = makeStyles(theme => ({
   descriptionGap: {
     marginTop: '10px',
     [theme.breakpoints.up('md')]: {
-      marginTop: '50px'
+      marginTop: '20px'
     },
   },
 }))

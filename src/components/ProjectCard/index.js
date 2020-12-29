@@ -17,7 +17,7 @@ function getModalStyle() {
   }
 }
 
-const ProjectCard = ({ previewImg, projectLink, githubLink, description, time }) => {
+const ProjectCard = ({ previewImg, projectLink, githubLink, description, time, tech, title }) => {
 
   const classes = useStyles()
   const [modalStyle] = useState(getModalStyle)
@@ -53,9 +53,19 @@ const ProjectCard = ({ previewImg, projectLink, githubLink, description, time })
                 Link to GitHub repository: <a style={{ color: '#707cc3' }} href={githubLink}>{githubLink}</a>
               </Typography>
             </div>
+            <div style={{ marginTop: '30px' }}>
+              <Typography className={classes.descriptionText} style={{ fontWeight: 'bold' }}>
+                {title}
+              </Typography>
+            </div>
             <div className={classes.descriptionGap}>
               <Typography className={classes.descriptionText}>
                 {description}
+              </Typography>
+            </div>
+            <div style={{ marginTop: '10px' }}>
+              <Typography className={classes.descriptionText} style={{ fontWeight: 'bold' }}>
+                Tech: {tech}
               </Typography>
             </div>
             <div style={{ marginTop: '10px' }}>
