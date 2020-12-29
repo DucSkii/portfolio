@@ -15,6 +15,9 @@ export const useStyles = makeStyles(theme => ({
       fontSize: '60px'
     },
     [theme.breakpoints.up('md')]: {
+      fontSize: '65px'
+    },
+    [theme.breakpoints.up('lg')]: {
       fontSize: '80px'
     },
   },
