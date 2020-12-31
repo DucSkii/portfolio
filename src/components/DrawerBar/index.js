@@ -48,7 +48,7 @@ const Drawer = () => {
         </DrawerButton>
       </div>
       <div className={classes.socials}>
-        <a href='https://github.com/DucSkii'
+        <a href='https://github.com/DucSkii' target="_blank" rel="noopener noreferrer"
           style={{
             display: 'flex',
             textDecoration: 'none',
@@ -60,7 +60,7 @@ const Drawer = () => {
           </Button>
           <Typography color='primary' style={{ fontSize: '13px' }}>GitHub</Typography>
         </a>
-        <a href='https://www.linkedin.com/in/ducviet-dao-898457202/'
+        <a href='https://www.linkedin.com/in/ducviet-dao-898457202/' target="_blank" rel="noopener noreferrer"
           style={{
             display: 'flex',
             textDecoration: 'none',
@@ -72,7 +72,7 @@ const Drawer = () => {
           </Button>
           <Typography color='primary' style={{ fontSize: '13px' }}>LinkedIn</Typography>
         </a>
-        <a href='https://www.instagram.com/ducskii/'
+        <a href='https://www.instagram.com/ducskii/' target="_blank" rel="noopener noreferrer"
           style={{
             display: 'flex',
             textDecoration: 'none',

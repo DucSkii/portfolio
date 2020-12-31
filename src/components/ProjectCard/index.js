@@ -47,10 +47,10 @@ const ProjectCard = ({ previewImg, projectLink, githubLink, description, time, t
           <div className={classes.description}>
             <div className={classes.links}>
               <Typography className={classes.linksText}>
-                Link to project: <a style={{ color: '#707cc3' }} href={projectLink}>{projectLink}</a>
+                Link to project: <a style={{ color: '#707cc3' }} href={projectLink} target="_blank" rel="noopener noreferrer">{projectLink}</a>
               </Typography>
               <Typography className={classes.linksText}>
-                Link to GitHub repository: <a style={{ color: '#707cc3' }} href={githubLink}>{githubLink}</a>
+                Link to GitHub repository: <a style={{ color: '#707cc3' }} href={githubLink} target="_blank" rel="noopener noreferrer">{githubLink}</a>
               </Typography>
             </div>
             <div style={{ marginTop: '30px' }}>

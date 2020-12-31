@@ -37,7 +37,7 @@ const Navigation = () => {
     if (open === true) {
       return (
         <div className={classes.socials}>
-          <a href='https://github.com/DucSkii'
+          <a href='https://github.com/DucSkii' target="_blank" rel="noopener noreferrer"
           >
             <Button className={classes.buttonSocialsExpanded}>
               <div className={classes.buttonSocials}>
@@ -46,7 +46,7 @@ const Navigation = () => {
               <Typography color='primary' style={{ fontSize: '13px' }}>GitHub</Typography>
             </Button>
           </a>
-          <a href='https://www.linkedin.com/in/ducviet-dao-898457202/'
+          <a href='https://www.linkedin.com/in/ducviet-dao-898457202/' target="_blank" rel="noopener noreferrer"
           >
             <Button className={classes.buttonSocialsExpanded}>
               <div className={classes.buttonSocials}>
@@ -55,7 +55,7 @@ const Navigation = () => {
               <Typography color='primary' style={{ fontSize: '13px' }}>LinkedIn</Typography>
             </Button>
           </a>
-          <a href='https://www.instagram.com/ducskii/'
+          <a href='https://www.instagram.com/ducskii/' target="_blank" rel="noopener noreferrer"
           >
             <Button className={classes.buttonSocialsExpanded} >
               <div className={classes.buttonSocials}>
@@ -70,7 +70,7 @@ const Navigation = () => {
 
     return (
       <div className={classes.socials}>
-        <a href='https://github.com/DucSkii'
+        <a href='https://github.com/DucSkii' target="_blank" rel="noopener noreferrer"
           style={{
             display: 'flex',
             textDecoration: 'none',
@@ -81,7 +81,7 @@ const Navigation = () => {
             <GitHubIcon color='primary' fontSize='small' />
           </Button>
         </a>
-        <a href='https://www.linkedin.com/in/ducviet-dao-898457202/'
+        <a href='https://www.linkedin.com/in/ducviet-dao-898457202/' target="_blank" rel="noopener noreferrer"
           style={{
             display: 'flex',
             textDecoration: 'none',
@@ -92,7 +92,7 @@ const Navigation = () => {
             <LinkedInIcon color='primary' fontSize='small' />
           </Button>
         </a>
-        <a href='https://www.instagram.com/ducskii/'
+        <a href='https://www.instagram.com/ducskii/' target="_blank" rel="noopener noreferrer"
           style={{
             display: 'flex',
             textDecoration: 'none',

@@ -136,7 +136,7 @@ const Skills = () => {
                 className={classes.skillsText}
                 style={{ marginTop: '20px' }}
               >
-                Visit my <a href='https://www.linkedin.com/in/ducviet-dao-898457202/' style={{ color: '#707cc3', fontWeight: 'bold' }}>LinkedIn</a> / <a href='https://github.com/DucSkii' style={{ color: '#707cc3', fontWeight: 'bold' }}>GitHub</a> profile for more details or just <Link to='/contact' style={{ color: '#707cc3', fontWeight: 'bold' }}>contact</Link> me.
+                Visit my <a href='https://www.linkedin.com/in/ducviet-dao-898457202/' target="_blank" rel="noopener noreferrer" style={{ color: '#707cc3', fontWeight: 'bold' }}>LinkedIn</a> / <a href='https://github.com/DucSkii' target="_blank" rel="noopener noreferrer" style={{ color: '#707cc3', fontWeight: 'bold' }}>GitHub</a> profile for more details or just <Link to='/contact' style={{ color: '#707cc3', fontWeight: 'bold' }}>contact</Link> me.
               </Typography>
             </Grid>
             <Grid item xs={12} className={classes.gap} />
