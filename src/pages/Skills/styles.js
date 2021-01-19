@@ -8,6 +8,9 @@ export const useStyles = makeStyles(theme => ({
   titleGap: {
     height: '10vh',
     [theme.breakpoints.up('md')]: {
+      height: '20vh'
+    },
+    [theme.breakpoints.up('lg')]: {
       height: '30vh'
     },
   },

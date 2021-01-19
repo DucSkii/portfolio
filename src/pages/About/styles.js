@@ -6,9 +6,12 @@ export const useStyles = makeStyles(theme => ({
     height: '100vh',
   },
   titleHeight: {
-      height: '10vh',
+    height: '10vh',
     [theme.breakpoints.up('md')]: {
-      height: '30vh',
+      height: '20vh'
+    },
+    [theme.breakpoints.up('lg')]: {
+      height: '30vh'
     },
   },
   letters: {
