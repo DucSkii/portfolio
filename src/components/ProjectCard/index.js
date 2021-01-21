@@ -90,7 +90,7 @@ const ProjectCard = ({ previewImg, projectLink, githubLink, description, time, t
       </div>
       <img src={previewImg}
         alt='preview img'
-        style={{ objectFit: 'contain', width: '100%' }}
+        style={{ objectFit: 'cover', width: '100%', height: '100%' }}
       />
     </div>
   )
