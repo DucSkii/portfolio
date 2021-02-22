@@ -59,7 +59,7 @@ const ProjectCard = ({ previewImg, projectLink, githubLink, description, time, t
               </Typography>
             </div>
             {account ? (
-              <Typography style={{ fontFamily: 'Roboto' }}>
+              <Typography className={classes.descriptionText}>
                 DUMMY ACCOUNT (Email:Password) : {account}
               </Typography>
             ) : null}
