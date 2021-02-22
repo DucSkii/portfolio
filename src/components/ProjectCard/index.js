@@ -17,7 +17,7 @@ function getModalStyle() {
   }
 }
 
-const ProjectCard = ({ previewImg, projectLink, githubLink, description, time, tech, title }) => {
+const ProjectCard = ({ previewImg, projectLink, githubLink, description, time, tech, title, account }) => {
 
   const classes = useStyles()
   const [modalStyle] = useState(getModalStyle)
@@ -58,6 +58,11 @@ const ProjectCard = ({ previewImg, projectLink, githubLink, description, time, t
                 {title}
               </Typography>
             </div>
+            {account ? (
+              <Typography style={{ fontFamily: 'Roboto' }}>
+                DUMMY ACCOUNT (Email:Password) : {account}
+              </Typography>
+            ) : null}
             <div className={classes.descriptionGap}>
               <Typography className={classes.descriptionText}>
                 {description}
