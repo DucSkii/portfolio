@@ -42,6 +42,10 @@ const Skills = () => {
       title: 'Redux',
     },
     {
+      icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png',
+      title: 'TypeScript',
+    },
+    {
       icon: 'https://image.flaticon.com/icons/png/512/25/25231.png',
       title: 'Git'
     },
@@ -54,8 +58,16 @@ const Skills = () => {
       title: 'Material-UI',
     },
     {
+      icon: 'https://banner2.cleanpng.com/20180425/jrw/kisspng-node-js-javascript-web-application-express-js-comp-5ae0f84e2a4242.1423638015246930701731.jpg',
+      title: 'NodeJS',
+    },
+    {
       icon: 'https://img.icons8.com/color/452/firebase.png',
       title: 'Firebase',
+    },
+    {
+      icon: 'https://seeklogo.com/images/J/jest-logo-F9901EBBF7-seeklogo.com.png',
+      title: 'Jest'
     },
   ]
 
