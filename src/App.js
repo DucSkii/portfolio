@@ -76,6 +76,14 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.app}>
+        <div style={{
+          width: '100vw',
+          position: 'fixed',
+          bottom: '0',
+          backgroundColor: '#4960A9',
+          height: '7vh',
+        }}
+        />
         <ThemeProvider theme={theme}>
           {
             emailShown &&
