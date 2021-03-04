@@ -22,4 +22,15 @@ export const useStyles = makeStyles(theme => ({
     padding: '0',
     margin: '0',
   },
+  discordIcon: {
+    display: 'flex',
+    alignItems: 'center',
+    transition: 'all 0.2s',
+  },
+  opacityNone: {
+    opacity: 0,
+  },
+  opacityShow: {
+    opacity: 1,
+  },
 }))
