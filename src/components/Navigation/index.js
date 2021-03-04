@@ -31,12 +31,16 @@ const Navigation = () => {
   useEffect(() => {
     if (open === false) {
       setStyle({ width: '60px' })
+      setShow(false)
     } else {
       setStyle({})
     }
   }, [open])
 
   const showClipboard = () => {
+    if (show) {
+      return null
+    }
     setShow(true)
     setTimeout(() => {
       setShow(false)
