@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Typography } from '@material-ui/core'
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined'
 import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined'
@@ -10,12 +10,24 @@ import InstagramIcon from '@material-ui/icons/Instagram'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import DrawerButton from './DrawerButton'
 import duckLogo from '../../images/duckLogo.png'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 import { useStyles } from './styles'
 
 const Drawer = () => {
 
   const classes = useStyles()
+  const [show, setShow] = useState(false)
+
+  const showClipboard = () => {
+    if (show) {
+      return null
+    }
+    setShow(true)
+    setTimeout(() => {
+      setShow(false)
+    }, 3000)
+  }
 
   return (
     <div className={classes.drawerContainer}>
@@ -48,6 +60,29 @@ const Drawer = () => {
         </DrawerButton>
       </div>
       <div className={classes.socials}>
+        <div
+          className={show ? classes.opacityShow : classes.opacityNone}
+          style={{
+            display: 'flex',
+            position: 'fixed',
+            width: '155px',
+            justifyContent: 'center',
+            bottom: '160px',
+            transition: 'all 0.5s',
+          }}
+        >
+          <Typography color='primary' style={{ fontSize: '13px', userSelect: 'none' }}>Copied to clipboard</Typography>
+        </div>
+        <CopyToClipboard text='DucSkii#0176'>
+          <div className={classes.discordIcon}
+            onClick={showClipboard}
+          >
+            <i className="fab fa-discord" aria-hidden="true"
+              style={{ color: '#707cc3', padding: '5px 22px', fontSize: '19px', userSelect: 'none' }}
+            />
+            <Typography color='primary' style={{ fontSize: '13px', userSelect: 'none' }}>DucSkii#0176</Typography>
+          </div>
+        </CopyToClipboard>
         <a href='https://github.com/DucSkii' target="_blank" rel="noopener noreferrer"
           style={{
             display: 'flex',
