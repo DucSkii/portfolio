@@ -15,6 +15,7 @@ import NavButton from './NavButton'
 import { useDispatch } from 'react-redux'
 import { setDrawerTrue } from '../../redux/ducks/drawer'
 import duckLogo from '../../images/duckLogo.png'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 import { useStyles } from './styles'
 
@@ -24,6 +25,8 @@ const Navigation = () => {
   const dispatch = useDispatch()
   const [open, setOpen] = useState(true)
   const [style, setStyle] = useState({})
+  const [hovered, setHovered] = useState(false)
+  const [show, setShow] = useState(false)
 
   useEffect(() => {
     if (open === false) {
@@ -33,16 +36,43 @@ const Navigation = () => {
     }
   }, [open])
 
+  const showClipboard = () => {
+    setShow(true)
+    setTimeout(() => {
+      setShow(false)
+    }, 3000)
+  }
+
   const renderSocials = () => {
     if (open === true) {
       return (
         <div className={classes.socials}>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <i className="fab fa-discord" aria-hidden="true"
-              style={{ color: '#707cc3', padding: '5px 22px', fontSize: '19px', userSelect: 'none' }}
-            />
-            <Typography color='primary' style={{ fontSize: '13px' }}>DucSkii#0176</Typography>
+          <div
+            className={show ? classes.opacityShow : classes.opacityNone}
+            style={{
+              display: 'flex',
+              position: 'fixed',
+              width: '155px',
+              justifyContent: 'center',
+              bottom: '160px',
+              transition: 'all 0.5s',
+            }}
+          >
+            <Typography color='primary' style={{ fontSize: '13px', userSelect: 'none' }}>Copied to clipboard</Typography>
           </div>
+          <CopyToClipboard text='DucSkii#0176'>
+            <div className={hovered ? classes.discordIconHovered : classes.discordIcon}
+              onMouseOver={() => setHovered(true)}
+              onMouseLeave={() => setHovered(false)}
+              style={{ cursor: 'pointer' }}
+              onClick={showClipboard}
+            >
+              <i className="fab fa-discord" aria-hidden="true"
+                style={{ color: '#707cc3', padding: '5px 22px', fontSize: '19px', userSelect: 'none' }}
+              />
+              <Typography color='primary' style={{ fontSize: '13px', userSelect: 'none' }}>DucSkii#0176</Typography>
+            </div>
+          </CopyToClipboard>
           <a href='https://github.com/DucSkii' target="_blank" rel="noopener noreferrer"
           >
             <Button className={classes.buttonSocialsExpanded}>
