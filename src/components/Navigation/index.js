@@ -37,6 +37,12 @@ const Navigation = () => {
     if (open === true) {
       return (
         <div className={classes.socials}>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <i className="fab fa-discord" aria-hidden="true"
+              style={{ color: '#707cc3', padding: '5px 22px', fontSize: '19px', userSelect: 'none' }}
+            />
+            <Typography color='primary' style={{ fontSize: '13px' }}>DucSkii#0176</Typography>
+          </div>
           <a href='https://github.com/DucSkii' target="_blank" rel="noopener noreferrer"
           >
             <Button className={classes.buttonSocialsExpanded}>
@@ -70,6 +76,11 @@ const Navigation = () => {
 
     return (
       <div className={classes.socials}>
+        <Button className={classes.buttonSocials} onClick={() => setOpen(true)}>
+          <i className="fab fa-discord" aria-hidden="true"
+            style={{ color: '#707cc3', padding: '5px 22px', fontSize: '19px', userSelect: 'none' }}
+          />
+        </Button>
         <a href='https://github.com/DucSkii' target="_blank" rel="noopener noreferrer"
           style={{
             display: 'flex',
