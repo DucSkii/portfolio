@@ -83,7 +83,7 @@ const Contact = () => {
                     If you have any requests or questions, don't hesitate to contact me using the form!
                   </Typography>
                   <Typography className={classes.description}>
-                    Alternatively, you can get through to me via mobile.
+                    Alternatively, you can get through to me via mobile, email, discord or any other socials.
                   </Typography>
                   <Typography className={classes.description} style={{ marginTop: '10px', fontWeight: 'bold' }}>
                     Ducviet Dao . 07990877427 . ducvietdao@live.co.uk
