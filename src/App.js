@@ -76,14 +76,15 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.app}>
-        <div style={{
+        {/* <div style={{
           width: '100vw',
           position: 'fixed',
           bottom: '0',
           backgroundColor: '#4960A9',
           height: '7vh',
         }}
-        />
+        /> */}
+        {/* Mobile gap filler */}
         <ThemeProvider theme={theme}>
           {
             emailShown &&

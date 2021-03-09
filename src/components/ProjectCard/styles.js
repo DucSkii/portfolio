@@ -30,11 +30,21 @@ export const useStyles = makeStyles(theme => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '80px',
-    height: '80px',
+    width: '60px',
+    height: '60px',
     borderRadius: '50px',
     backgroundColor: '#8dd0f4',
     zIndex: '40',
+    [theme.breakpoints.up('md')]: {
+      width: '80px',
+      height: '80px',
+    },
+  },
+  viewButtonText: {
+    fontSize: '12px',
+    [theme.breakpoints.up('md')]: {
+      fontSize: '16px',
+    },
   },
   modal: {
     position: 'absolute',

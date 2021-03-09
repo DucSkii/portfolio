@@ -88,7 +88,7 @@ const ProjectCard = ({ previewImg, projectLink, githubLink, description, time, t
       >
         <div className={classes.filter} style={style} />
         <div className={classes.viewButton}>
-          <Typography color='primary' style={{ textAlign: 'center', userSelect: 'none' }}>
+          <Typography color='primary' className={classes.viewButtonText} style={{ textAlign: 'center', userSelect: 'none' }}>
             View Project
           </Typography>
         </div>

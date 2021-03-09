@@ -33,6 +33,26 @@ const Work = () => {
     tech: 'React, Firebase, Material-UI'
   }
 
+  const projectArray = [shoppingProject, socialMediaProject]
+
+  const renderProjectCard = () => {
+    return projectArray.map((project, index) => {
+      return (
+        <Grid item container xs={8} sm={5} md={3} className={classes.projectCard} key={index}>
+          <Grid item xs={12}>
+            <Typography>{project.title}</Typography>
+          </Grid>
+          <Grid item container xs={12}>
+            <ProjectCard {...project} />
+          </Grid>
+          <Grid item xs={12}>
+            <Typography className={classes.techText}>Tech: {project.tech}</Typography>
+          </Grid>
+        </Grid>
+      )
+    })
+  }
+
   return (
     <motion.div
       initial="out"
@@ -69,50 +89,8 @@ const Work = () => {
           </Typography>
         </Grid>
         <Grid item xs={12} className={classes.titleSeparator} />
-        <Grid container item xs={12}>
-          <Grid item xs={1} sm={3} md={2} />
-          <Grid container item xs={10} sm={6} md={3} style={{ justifyContent: 'center' }}>
-            <Typography>{shoppingProject.title}</Typography>
-          </Grid>
-          <Grid item xs={12} md={2} className={classes.hideProjectSeparator} />
-          <Grid item xs={1} sm={3} className={classes.smallScreenSeparator} />
-          <Grid container className={classes.hideTitle} item xs={10} sm={6} md={3} style={{ justifyContent: 'center' }}>
-            <Typography>{socialMediaProject.title}</Typography>
-          </Grid>
-          <Grid item xs={1} sm={3} md={2} />
-        </Grid>
-        <Grid container item xs={12}>
-          <Grid item xs={1} sm={3} md={2} />
-          <Grid container item xs={10} sm={6} md={3} style={{ justifyContent: 'center' }}>
-            <Grid item xs={1} sm={3} className={classes.smallScreenSeparator} />
-            <ProjectCard {...shoppingProject} />
-          </Grid>
-          <Grid item xs={12} md={2} className={classes.projectSeparator} />
-          <Grid container item xs={12} className={classes.hide}>
-            <Grid item xs={1} />
-            <Grid container item xs={10} style={{ justifyContent: 'center' }}>
-              <Typography>{socialMediaProject.title}</Typography>
-            </Grid>
-            <Grid item xs={1} />
-          </Grid>
-          <Grid item xs={1} sm={3} className={classes.smallScreenSeparator} />
-          <Grid container item xs={10} sm={6} md={3} style={{ justifyContent: 'center' }}>
-            <ProjectCard {...socialMediaProject} />
-          </Grid>
-          <Grid item xs={1} sm={3} md={2} />
-        </Grid>
-        <Grid container item xs={12} className={classes.hideTitle}>
-          <Grid item xs={1} sm={3} md={2} />
-          <Grid container item xs={10} sm={6} md={3} style={{ justifyContent: 'center' }}>
-            <Grid item xs={1} sm={3} className={classes.smallScreenSeparator} />
-            <Typography>Tech: {shoppingProject.tech}</Typography>
-          </Grid>
-          <Grid item xs={12} md={2} className={classes.projectSeparator} />
-          <Grid item xs={1} sm={3} className={classes.smallScreenSeparator} />
-          <Grid container item xs={10} sm={6} md={3} style={{ justifyContent: 'center' }}>
-            <Typography>Tech: {socialMediaProject.tech}</Typography>
-          </Grid>
-          <Grid item xs={1} sm={3} md={2} />
+        <Grid container item xs={12} style={{ textAlign: 'center', justifyContent: 'space-evenly' }}>
+          {renderProjectCard()}
         </Grid>
       </Grid>
     </motion.div>

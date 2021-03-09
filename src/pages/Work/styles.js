@@ -23,38 +23,24 @@ export const useStyles = makeStyles(theme => ({
     },
   },
   titleSeparator: {
-    height: '5vh',
+    height: '0vh',
+    [theme.breakpoints.up('sm')]: {
+      height: '5vh',
+    },
     [theme.breakpoints.up('md')]: {
       height: '10vh',
     },
   },
-  projectSeparator: {
-    height: '5vh',
-    [theme.breakpoints.up('md')]: {
-      height: '0',
+  techText: {
+    fontSize: '12px',
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '16px',
     },
   },
-  smallScreenSeparator: {
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
-    },
-  },
-  hideTitle: {
-    display: 'none',
-    [theme.breakpoints.up('md')]: {
-      display: 'flex',
-    },
-  },
-  hide: {
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
-    },
-  },
-  hideProjectSeparator: {
-    display: 'none',
-    [theme.breakpoints.up('md')]: {
-      height: '0',
-      display: 'flex',
+  projectCard: {
+    marginBottom: '15px',
+    [theme.breakpoints.up('sm')]: {
+      marginBottom: 'none',
     },
   },
 }))
