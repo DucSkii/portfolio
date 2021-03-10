@@ -40,7 +40,7 @@ export const useStyles = makeStyles(theme => ({
   projectCard: {
     marginBottom: '15px',
     [theme.breakpoints.up('sm')]: {
-      marginBottom: 'none',
+      marginBottom: '0',
     },
   },
 }))

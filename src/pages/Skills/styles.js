@@ -43,13 +43,15 @@ export const useStyles = makeStyles(theme => ({
   skillIcons: {
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '10px',
     userSelect: 'none',
   },
   gap: {
-    height: '1vh',
+    height: '5vh',
+  },
+  skillsContainer: {
+    justifyContent: 'center',
     [theme.breakpoints.up('md')]: {
-      height: '5vh'
+      justifyContent: 'flex-start'
     },
   },
 }))

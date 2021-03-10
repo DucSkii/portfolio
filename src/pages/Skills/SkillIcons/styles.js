@@ -6,7 +6,7 @@ export const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: '10px',
+    marginBottom: '10px',
     width: '56px',
     transition: '0.5s ease',
     [theme.breakpoints.up('sm')]: {
@@ -25,14 +25,9 @@ export const useStyles = makeStyles(theme => ({
     justifyContent: 'center',
     alignItems: 'center',
     [theme.breakpoints.up('sm')]: {
-      width: '50px',
-      height: '50px',
-      borderRadius: '10px',
-    },
-    [theme.breakpoints.up('md')]: {
       width: '60px',
       height: '60px',
-      borderRadius: '15px',
+      borderRadius: '10px',
     },
   },
   title: {

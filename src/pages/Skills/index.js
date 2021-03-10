@@ -152,7 +152,7 @@ const Skills = () => {
               </Typography>
             </Grid>
             <Grid item xs={12} className={classes.gap} />
-            <Grid container item xs={12}>
+            <Grid container item xs={12} className={classes.skillsContainer}>
               {renderIcons()}
             </Grid>
           </Grid>
