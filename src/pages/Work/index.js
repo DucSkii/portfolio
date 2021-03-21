@@ -27,7 +27,6 @@ const Work = () => {
     previewImg: 'https://camo.githubusercontent.com/0818c31bee813ef3875c3e9ce1bd3bb43fa7300a843debe1c701a9ab618eb084/68747470733a2f2f692e6779617a6f2e636f6d2f32636139316665656235626433373939336262376164303335363739306363342e706e67',
     projectLink: 'https://social-media-69506.web.app/',
     githubLink: 'https://github.com/DucSkii/social-media-app',
-    account: 'test2@gmail.com:test2123',
     description: 'My social media app updates real time with a fully functional back-end. The website is also fully responsive and users can personalise their themes. Other features include options to follow users, like posts, comment, real-time chat between users.',
     time: '3 weeks',
     tech: 'React, Firebase, Material-UI'
