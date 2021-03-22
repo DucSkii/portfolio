@@ -43,7 +43,7 @@ const Work = () => {
     previewImg: 'https://i.gyazo.com/2e2d18947651aac8576b4cb05c556ba9.png',
     projectLink: 'https://map-project-4763e.web.app/',
     githubLink: 'https://github.com/DucSkii/spotify-clone',
-    description: '**MUST HAVE A REAL SPOTIFY ACCOUNT TO USE, This app does not play any audio and is not responsive to small screens.**I made a clone of spotify. The goal of this project was to get as close as I could to the real thing, going down to the small details. The app does not update the playback bar and the footer will only function if you already have spotify open.',
+    description: '**MUST HAVE A REAL SPOTIFY ACCOUNT TO USE, This app does not play any audio.**I made a clone of spotify. The goal of this project was to get as close as I could to the real thing, going down to the small details. The app does not update the playback bar and the footer will only function if you already have spotify open.',
     time: '1 week',
     tech: 'React, Storybook, Spotify API',
   }
