@@ -67,8 +67,12 @@ const Skills = () => {
     },
     {
       icon: 'https://seeklogo.com/images/J/jest-logo-F9901EBBF7-seeklogo.com.png',
-      title: 'Jest'
+      title: 'Jest',
     },
+    {
+      icon: 'https://raw.githubusercontent.com/react-theming/storybook-addon-material-ui/master/docs/logos/Storybook.png',
+      title: 'Storybook',
+    }
   ]
 
   const renderText = () => {
