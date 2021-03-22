@@ -43,4 +43,10 @@ export const useStyles = makeStyles(theme => ({
       marginBottom: '0',
     },
   },
+  projectNav: {
+    display: 'flex',
+    [theme.breakpoints.up('sm')]: {
+      display: 'none',
+    },
+  },
 }))

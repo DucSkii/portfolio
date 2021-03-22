@@ -1,8 +1,11 @@
-import React from 'react'
-import { Grid, Typography } from '@material-ui/core'
+import React, { useState } from 'react'
+import { Grid, Typography, IconButton } from '@material-ui/core'
 import { motion } from 'framer-motion'
 import { pageVariantHorizontal } from '../../utils/pageTransition'
 import ProjectCard from '../../components/ProjectCard'
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
+import ChevronRightIcon from '@material-ui/icons/ChevronRight'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 import { useStyles } from './styles'
 
@@ -11,6 +14,9 @@ const Work = () => {
   const classes = useStyles()
 
   const title = 'My Projects'.split('')
+
+  const [page, setPage] = useState(1)
+  const largeScreen = useMediaQuery('(min-width:578px)')
 
   const shoppingProject = {
     title: 'eCommerce Site',
@@ -45,21 +51,57 @@ const Work = () => {
   const projectArray = [shoppingProject, socialMediaProject, spotifyCloneProject]
 
   const renderProjectCard = () => {
-    return projectArray.map((project, index) => {
-      return (
-        <Grid item container xs={8} sm={5} md={3} className={classes.projectCard} key={index}>
-          <Grid item xs={12}>
-            <Typography>{project.title}</Typography>
+    if (largeScreen) {
+      return projectArray.map((project, index) => {
+        return (
+          <Grid item container xs={8} sm={5} md={3} className={classes.projectCard} key={index}>
+            <Grid item xs={12}>
+              <Typography>{project.title}</Typography>
+            </Grid>
+            <Grid item container xs={12}>
+              <ProjectCard {...project} />
+            </Grid>
+            <Grid item xs={12}>
+              <Typography className={classes.techText}>Tech: {project.tech}</Typography>
+            </Grid>
           </Grid>
-          <Grid item container xs={12}>
-            <ProjectCard {...project} />
-          </Grid>
-          <Grid item xs={12}>
-            <Typography className={classes.techText}>Tech: {project.tech}</Typography>
-          </Grid>
-        </Grid>
-      )
-    })
+        )
+      })
+    } else {
+      if (page === 1) {
+        return projectArray.slice(0, 2).map((project, index) => {
+          return (
+            <Grid item container xs={8} sm={5} md={3} className={classes.projectCard} key={index}>
+              <Grid item xs={12}>
+                <Typography>{project.title}</Typography>
+              </Grid>
+              <Grid item container xs={12}>
+                <ProjectCard {...project} />
+              </Grid>
+              <Grid item xs={12}>
+                <Typography className={classes.techText}>Tech: {project.tech}</Typography>
+              </Grid>
+            </Grid>
+          )
+        })
+      } else {
+        return projectArray.slice(2).map((project, index) => {
+          return (
+            <Grid item container xs={8} sm={5} md={3} className={classes.projectCard} key={index}>
+              <Grid item xs={12}>
+                <Typography>{project.title}</Typography>
+              </Grid>
+              <Grid item container xs={12}>
+                <ProjectCard {...project} />
+              </Grid>
+              <Grid item xs={12}>
+                <Typography className={classes.techText}>Tech: {project.tech}</Typography>
+              </Grid>
+            </Grid>
+          )
+        })
+      }
+    }
   }
 
   return (
@@ -96,6 +138,23 @@ const Work = () => {
               )
             })}
           </Typography>
+        </Grid>
+        <Grid
+          item xs={12}
+          className={classes.projectNav}
+          style={{
+            justifyContent: 'center', alignItems: 'center',
+          }}
+        >
+          <IconButton onClick={() => setPage(1)}>
+            <ChevronLeftIcon />
+          </IconButton>
+          <Typography color='primary'>
+            Page {page}
+          </Typography>
+          <IconButton onClick={() => setPage(2)}>
+            <ChevronRightIcon />
+          </IconButton>
         </Grid>
         <Grid item xs={12} className={classes.titleSeparator} />
         <Grid container item xs={12} style={{ textAlign: 'center', justifyContent: 'space-evenly' }}>
