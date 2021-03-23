@@ -165,13 +165,16 @@ const Navigation = () => {
       <div className={classes.container} style={style}>
         <div>
           <NavButton navigation='/' Text='logo' open={open}>
-            <img src={duckLogo} alt='logo'
+            <img
+              src={duckLogo}
+              alt='logo'
               style={{
                 objectFit: 'contain',
                 width: '100%',
                 padding: '15px',
                 overflow: 'hidden',
               }}
+              draggable='false'
             />
           </NavButton>
           {open ? (
@@ -179,10 +182,10 @@ const Navigation = () => {
               <ChevronLeftIcon color='secondary' fontSize='large' />
             </NavButton>
           ) : (
-              <NavButton Text='Expand' setOpen={setOpen} open={open}>
-                <ChevronRightIcon color='secondary' fontSize='large' />
-              </NavButton>
-            )}
+            <NavButton Text='Expand' setOpen={setOpen} open={open}>
+              <ChevronRightIcon color='secondary' fontSize='large' />
+            </NavButton>
+          )}
         </div>
         <div className={classes.buttonContainer}>
           <NavButton navigation='/' Text='Home' open={open}>

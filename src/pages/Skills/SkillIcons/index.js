@@ -27,11 +27,14 @@ const SkillIcons = ({ icon, title }) => {
       <div
         className={classes.SkillIcons}
       >
-        <img src={icon} alt='icon'
+        <img
+          src={icon}
+          alt='icon'
           style={{
             objectFit: 'contain',
             width: '70%',
           }}
+          draggable='false'
         />
       </div>
       <Typography color='primary' className={classes.title}>{title}</Typography>

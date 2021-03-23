@@ -70,11 +70,17 @@ const About = () => {
         onClose={() => setOpen(false)}
       >
         <div style={modalStyle} className={classes.modal}>
-          <img src={timelineVertical} alt='timeline'
+          <img
+            src={timelineVertical}
+            alt='timeline'
             className={classes.modalImageSmall}
+            draggable='false'
           />
-          <img src={timeline} alt='timeline'
+          <img
+            src={timeline}
+            alt='timeline'
             className={classes.modalImageLarge}
+            draggable='false'
           />
         </div>
       </Modal>
@@ -140,13 +146,17 @@ const About = () => {
               >
                 CLICK TO EXPAND
             </Typography>
-              <img src={timeline} alt='timeline'
+              <img
+                src={timeline}
+                alt='timeline'
                 className={classes.timelineExtra}
                 onClick={() => setOpen(true)}
                 style={{
                   objectFit: 'contain',
                   width: '100%',
+                  cursor: 'pointer',
                 }}
+                draggable='false'
               />
             </Grid>
           </Grid>

@@ -40,9 +40,11 @@ const ProjectCard = ({ previewImg, projectLink, githubLink, description, time, t
         onClose={() => setOpen(false)}
       >
         <div style={modalStyle} className={classes.modal}>
-          <img src={previewImg}
+          <img
+            src={previewImg}
             alt='preview img'
             style={{ objectFit: 'contain', width: '50%' }}
+            draggable='false'
           />
           <div className={classes.description}>
             <div className={classes.links}>
