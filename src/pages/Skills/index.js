@@ -58,7 +58,7 @@ const Skills = () => {
       title: 'Material-UI',
     },
     {
-      icon: 'https://banner2.cleanpng.com/20180425/jrw/kisspng-node-js-javascript-web-application-express-js-comp-5ae0f84e2a4242.1423638015246930701731.jpg',
+      icon: 'https://cdn.iconscout.com/icon/free/png-512/node-js-1174925.png',
       title: 'NodeJS',
     },
     {
@@ -72,7 +72,19 @@ const Skills = () => {
     {
       icon: 'https://raw.githubusercontent.com/react-theming/storybook-addon-material-ui/master/docs/logos/Storybook.png',
       title: 'Storybook',
-    }
+    },
+    {
+      icon: 'https://img.icons8.com/ios/452/react-native.png',
+      title: 'React Native',
+    },
+    {
+      icon: 'https://cdn4.iconfinder.com/data/icons/logos-3/504/Swift-2-512.png',
+      title: 'Swift',
+    },
+    {
+      icon: 'https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png',
+      title: 'Kotlin',
+    },
   ]
 
   const renderText = () => {

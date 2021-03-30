@@ -33,11 +33,12 @@ export const useStyles = makeStyles(theme => ({
   title: {
     marginTop: '5px',
     fontSize: '10px',
+    whiteSpace: 'nowrap',
     [theme.breakpoints.up('sm')]: {
       fontSize: '13px',
     },
     [theme.breakpoints.up('md')]: {
-      fontSize: '1rem',
+      fontSize: '15px',
     }
   },
 }))
