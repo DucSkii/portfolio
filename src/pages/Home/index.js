@@ -14,7 +14,7 @@ const Home = () => {
   const title = [
     'Hi,',
     `I'm Duc,`,
-    'web developer.',
+    'Frontend developer.',
   ]
 
   const renderTitle = () => {
@@ -78,7 +78,7 @@ const Home = () => {
                 userSelect: 'none',
               }}
             >
-              Front End Developer / React Developer
+              React / React Native Developer
           </Typography>
           </Grid>
         </Grid>

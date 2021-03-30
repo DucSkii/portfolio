@@ -118,7 +118,7 @@ const About = () => {
             <Grid item xs={12} md={6}>
               {renderText()}
             </Grid>
-            <Grid container item xs={12} md={6}
+            {/* <Grid container item xs={12} md={6}
               style={{ alignItems: 'center', flexDirection: 'column' }}
             >
               <Typography
@@ -158,7 +158,7 @@ const About = () => {
                 }}
                 draggable='false'
               />
-            </Grid>
+            </Grid> */}
           </Grid>
           <Grid item xs={1} />
         </Grid>
