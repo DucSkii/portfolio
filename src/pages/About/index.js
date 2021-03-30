@@ -30,7 +30,7 @@ const About = () => {
   const title = 'About me'.split('')
 
   const aboutMeText = [
-    'Went from the graphics designing industry to moving into web development with now over a year of experience.',
+    'Went from the graphics designing industry to moving into front end development with now over a year of experience.',
     ' ',
     'Highly motivated individual who is naturally analytically minded with a keen eye for detail. Fan of Boxing, Basketball, eSports and Animation.',
     ' ',
