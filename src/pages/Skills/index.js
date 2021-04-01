@@ -50,6 +50,10 @@ const Skills = () => {
       title: 'Git'
     },
     {
+      icon: 'https://img.icons8.com/ios/452/react-native.png',
+      title: 'React Native',
+    },
+    {
       icon: 'https://cdn.worldvectorlogo.com/logos/sass-1.svg',
       title: 'SASS',
     },
@@ -72,10 +76,6 @@ const Skills = () => {
     {
       icon: 'https://raw.githubusercontent.com/react-theming/storybook-addon-material-ui/master/docs/logos/Storybook.png',
       title: 'Storybook',
-    },
-    {
-      icon: 'https://img.icons8.com/ios/452/react-native.png',
-      title: 'React Native',
     },
     // {
     //   icon: 'https://cdn4.iconfinder.com/data/icons/logos-3/504/Swift-2-512.png',
