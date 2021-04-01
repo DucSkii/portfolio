@@ -77,14 +77,14 @@ const Skills = () => {
       icon: 'https://img.icons8.com/ios/452/react-native.png',
       title: 'React Native',
     },
-    {
-      icon: 'https://cdn4.iconfinder.com/data/icons/logos-3/504/Swift-2-512.png',
-      title: 'Swift',
-    },
-    {
-      icon: 'https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png',
-      title: 'Kotlin',
-    },
+    // {
+    //   icon: 'https://cdn4.iconfinder.com/data/icons/logos-3/504/Swift-2-512.png',
+    //   title: 'Swift',
+    // },
+    // {
+    //   icon: 'https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png',
+    //   title: 'Kotlin',
+    // },
   ]
 
   const renderText = () => {
