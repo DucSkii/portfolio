@@ -4,7 +4,7 @@ export const useStyles = makeStyles(theme => ({
   ProjectCard: {
     position: 'relative',
     width: '100%',
-    height: '100%',
+    height: '100%', 
   },
   cover: {
     position: 'absolute',

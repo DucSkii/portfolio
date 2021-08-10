@@ -48,6 +48,15 @@ const Work = () => {
     tech: 'React, Storybook, Spotify API',
   }
 
+  const bookAppProject = {
+    title: 'Book App',
+    previewImg: 'https://i.gyazo.com/e3f11e86313c9af12752198b4205d035.png',
+    githubLink: 'https://github.com/DucSkii/react-native-bookapp',
+    description: 'This app was styled using StyleSheet from react native. This is my first react native project, I was able to transfer my knowledge from react to create the app. This app does not have a lot of functionality and focuses on the layout and interactiveness of the app.',
+    time: '4 days',
+    tech: 'React Native',
+  }
+
   const projectArray = [shoppingProject, socialMediaProject, spotifyCloneProject]
 
   const renderProjectCard = () => {

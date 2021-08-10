@@ -77,14 +77,6 @@ const Skills = () => {
       icon: 'https://raw.githubusercontent.com/react-theming/storybook-addon-material-ui/master/docs/logos/Storybook.png',
       title: 'Storybook',
     },
-    // {
-    //   icon: 'https://cdn4.iconfinder.com/data/icons/logos-3/504/Swift-2-512.png',
-    //   title: 'Swift',
-    // },
-    // {
-    //   icon: 'https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png',
-    //   title: 'Kotlin',
-    // },
   ]
 
   const renderText = () => {

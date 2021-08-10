@@ -8,11 +8,11 @@ export const useStyles = makeStyles(theme => ({
   letters: {
     [theme.breakpoints.up('xs')]: {
       marginTop: '10px',
-      fontSize: '40px',
+      fontSize: '30px',
     },
     [theme.breakpoints.up('sm')]: {
       marginTop: '0',
-      fontSize: '60px'
+      fontSize: '50px'
     },
     [theme.breakpoints.up('md')]: {
       fontSize: '65px'
@@ -23,7 +23,7 @@ export const useStyles = makeStyles(theme => ({
   },
   text: {
     [theme.breakpoints.up('xs')]: {
-      fontSize: '17px',
+      fontSize: '15px',
     },
     [theme.breakpoints.up('sm')]: {
       fontSize: '22px',

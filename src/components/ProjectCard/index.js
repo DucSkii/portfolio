@@ -43,7 +43,7 @@ const ProjectCard = ({ previewImg, projectLink, githubLink, description, time, t
           <img
             src={previewImg}
             alt='preview img'
-            style={{ objectFit: 'contain', width: '50%' }}
+            style={{ objectFit: 'contain', width: '50%', maxHeight: '389px' }}
             draggable='false'
           />
           <div className={classes.description}>
@@ -92,7 +92,7 @@ const ProjectCard = ({ previewImg, projectLink, githubLink, description, time, t
       </div>
       <img src={previewImg}
         alt='preview img'
-        style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+        style={{ objectFit: 'fit', width: '100%', height: '100%' }}
       />
     </div>
   )
