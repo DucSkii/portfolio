@@ -57,7 +57,7 @@ const Work = () => {
     tech: 'React Native',
   }
 
-  const projectArray = [shoppingProject, socialMediaProject, spotifyCloneProject]
+  const projectArray = [shoppingProject, socialMediaProject, spotifyCloneProject, bookAppProject]
 
   const renderProjectCard = () => {
     if (largeScreen) {
@@ -166,7 +166,7 @@ const Work = () => {
           </IconButton>
         </Grid>
         <Grid item xs={12} className={classes.titleSeparator} />
-        <Grid container item xs={12} style={{ textAlign: 'center', justifyContent: 'space-evenly' }}>
+        <Grid container item xs={12} spacing={1} style={{ textAlign: 'center', justifyContent: 'space-evenly' }}>
           {renderProjectCard()}
         </Grid>
       </Grid>

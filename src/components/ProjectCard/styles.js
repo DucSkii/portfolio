@@ -4,7 +4,16 @@ export const useStyles = makeStyles(theme => ({
   ProjectCard: {
     position: 'relative',
     width: '100%',
-    height: '100%', 
+    height: '180px',
+    [theme.breakpoints.up('sm')]: {
+      height: '200px'
+    },
+    [theme.breakpoints.up('md')]: {
+      height: '220px'
+    },
+    [theme.breakpoints.up('lg')]: {
+      height: '250px', 
+    },
   },
   cover: {
     position: 'absolute',
@@ -68,7 +77,6 @@ export const useStyles = makeStyles(theme => ({
     width: '80%',
     marginTop: '10px',
     [theme.breakpoints.up('md')]: {
-      marginLeft: '20px',
       marginTop: '15px',
       width: '50%',
     },
@@ -89,6 +97,7 @@ export const useStyles = makeStyles(theme => ({
   },
   linksText: {
     fontSize: '10px',
+    textAlign: 'center',
     [theme.breakpoints.up('md')]: {
       fontSize: '1rem',
     },

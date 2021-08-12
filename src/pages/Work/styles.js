@@ -33,6 +33,7 @@ export const useStyles = makeStyles(theme => ({
   },
   techText: {
     fontSize: '12px',
+    minWidth: '204px',
     [theme.breakpoints.up('lg')]: {
       fontSize: '16px',
     },
