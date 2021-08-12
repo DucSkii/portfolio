@@ -121,7 +121,7 @@ const Work = () => {
       variants={pageVariantHorizontal}
       className={classes.Work}
     >
-      <Grid container>
+      <Grid container style={{ justifyContent: 'center' }}>
         <Grid item xs={12} className={classes.titleHeight} />
         <Grid container item xs={12} style={{ justifyContent: 'center' }}>
           <Typography
