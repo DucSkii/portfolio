@@ -5,6 +5,21 @@ import { pageVariantHorizontal } from '../../utils/pageTransition'
 import materialLogo from '../../images/materialLogo.png'
 import { Link } from 'react-router-dom'
 
+import javascriptIMG from '../../images/javascript.webp'
+import cssIMG from '../../images/css.png'
+import html5IMG from '../../images/html5.png'
+import reactIMG from '../../images/react.jpg'
+import reduxIMG from '../../images/redux.png'
+import typescriptIMG from '../../images/typescript.png'
+import gitIMG from '../../images/git.png'
+import reactnativeIMG from '../../images/react-native.png'
+import sassIMG from '../../images/sass.svg'
+import nodejsIMG from '../../images/node-js.svg'
+import firebaseIMG from '../../images/firebase.png'
+import jestIMG from '../../images/jest.png'
+import storybookIMG from '../../images/storybook.png'
+import wordpressIMG from '../../images/wordpress.png'
+
 import { useStyles } from './styles'
 import SkillIcons from './SkillIcons'
 
@@ -22,39 +37,39 @@ const Skills = () => {
 
   const skills = [
     {
-      icon: 'https://cdn.iconscout.com/icon/free/png-256/javascript-2038874-1720087.png',
+      icon: javascriptIMG,
       title: 'JavaScript',
     },
     {
-      icon: 'https://image.flaticon.com/icons/png/512/1216/1216733.png',
+      icon: html5IMG,
       title: 'HTML5',
     },
     {
-      icon: 'https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/css/css.png',
+      icon: cssIMG,
       title: 'CSS3',
     },
     {
-      icon: 'https://icon-library.com/images/react-icon/react-icon-29.jpg',
+      icon: reactIMG,
       title: 'React',
     },
     {
-      icon: 'https://bendyworks.com/assets/images/blog/2020-05-04-ionic-react-and-redux-74ed1080.png',
+      icon: reduxIMG,
       title: 'Redux',
     },
     {
-      icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png',
+      icon: typescriptIMG,
       title: 'TypeScript',
     },
     {
-      icon: 'https://image.flaticon.com/icons/png/512/25/25231.png',
+      icon: gitIMG,
       title: 'Git'
     },
     {
-      icon: 'https://img.icons8.com/ios/452/react-native.png',
+      icon: reactnativeIMG,
       title: 'React Native',
     },
     {
-      icon: 'https://cdn.worldvectorlogo.com/logos/sass-1.svg',
+      icon: sassIMG,
       title: 'SASS',
     },
     {
@@ -62,21 +77,25 @@ const Skills = () => {
       title: 'Material-UI',
     },
     {
-      icon: 'https://cdn.iconscout.com/icon/free/png-512/node-js-1174925.png',
+      icon: nodejsIMG,
       title: 'NodeJS',
     },
     {
-      icon: 'https://img.icons8.com/color/452/firebase.png',
+      icon: firebaseIMG,
       title: 'Firebase',
     },
     {
-      icon: 'https://seeklogo.com/images/J/jest-logo-F9901EBBF7-seeklogo.com.png',
+      icon: jestIMG,
       title: 'Jest',
     },
     {
-      icon: 'https://raw.githubusercontent.com/react-theming/storybook-addon-material-ui/master/docs/logos/Storybook.png',
+      icon: storybookIMG,
       title: 'Storybook',
     },
+    {
+      icon: wordpressIMG,
+      title: 'WordPress'
+    }
   ]
 
   const renderText = () => {

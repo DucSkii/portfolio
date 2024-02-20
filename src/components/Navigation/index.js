@@ -30,7 +30,7 @@ const Navigation = () => {
 
   useEffect(() => {
     if (open === false) {
-      setStyle({ width: '60px' })
+      setStyle({ width: '60px', minWidth: '60px' })
       setShow(false)
     } else {
       setStyle({})
@@ -64,7 +64,7 @@ const Navigation = () => {
           >
             <Typography color='primary' style={{ fontSize: '13px', userSelect: 'none' }}>Copied to clipboard</Typography>
           </div>
-          <CopyToClipboard text='DucSkii#0176'>
+          <CopyToClipboard text='ducskii'>
             <div className={hovered ? classes.discordIconHovered : classes.discordIcon}
               onMouseOver={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
@@ -72,9 +72,9 @@ const Navigation = () => {
               onClick={showClipboard}
             >
               <i className="fab fa-discord" aria-hidden="true"
-                style={{ color: '#707cc3', padding: '5px 22px', fontSize: '19px', userSelect: 'none' }}
+                style={{ color: '#707cc3', padding: '5px 0px', fontSize: '19px', userSelect: 'none', width: '60px', display: 'flex', justifyContent: 'center', minWidth: '60px' }}
               />
-              <Typography color='primary' style={{ fontSize: '13px', userSelect: 'none' }}>DucSkii#0176</Typography>
+              <Typography color='primary' style={{ fontSize: '13px', userSelect: 'none' }}>DUCSKII</Typography>
             </div>
           </CopyToClipboard>
           <a href='https://github.com/DucSkii' target="_blank" rel="noopener noreferrer"
@@ -112,7 +112,7 @@ const Navigation = () => {
       <div className={classes.socials}>
         <Button className={classes.buttonSocials} onClick={() => setOpen(true)}>
           <i className="fab fa-discord" aria-hidden="true"
-            style={{ color: '#707cc3', padding: '5px 22px', fontSize: '19px', userSelect: 'none' }}
+            style={{ color: '#707cc3', padding: '5px 0px', fontSize: '19px', userSelect: 'none', width: '60px', display: 'flex', justifyContent: 'center' }}
           />
         </Button>
         <a href='https://github.com/DucSkii' target="_blank" rel="noopener noreferrer"

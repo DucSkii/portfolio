@@ -7,6 +7,13 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 
+import spotifyIMG from '../../images/spotify.png'
+import bookappIMG from '../../images/bookapp.png'
+import ecommerceIMG from '../../images/ecommerceimg.png'
+import socialmediaIMG from '../../images/socialmedia.png'
+import kenzieIMG from '../../images/kenzie.png'
+import enviIMG from '../../images/envi.png'
+
 import { useStyles } from './styles'
 
 const Work = () => {
@@ -20,7 +27,7 @@ const Work = () => {
 
   const shoppingProject = {
     title: 'eCommerce Site',
-    previewImg: 'https://camo.githubusercontent.com/49679fcb3fb80256054f206986b4729a0acda04fd6fff81c3c3dcdff14934504/68747470733a2f2f692e6779617a6f2e636f6d2f34346663393966386365303539346639303234336537353266316234633336352e706e67',
+    previewImg: ecommerceIMG,
     projectLink: 'https://shopping-cart-project-f7cf3.web.app/',
     githubLink: 'https://github.com/DucSkii/shopping-cart',
     description: 'THIS PROJECT IS NOT RESPONSIVE TO SMALL SCREEN DEVICES. My goal for the eCommerce site was to create a fast single page application that is quick and easy to navigate. Other features I had added were things like filters, option to favourite, scroll to top, pre-selected delivery options.',
@@ -30,7 +37,7 @@ const Work = () => {
 
   const socialMediaProject = {
     title: 'Social Media App',
-    previewImg: 'https://camo.githubusercontent.com/0818c31bee813ef3875c3e9ce1bd3bb43fa7300a843debe1c701a9ab618eb084/68747470733a2f2f692e6779617a6f2e636f6d2f32636139316665656235626433373939336262376164303335363739306363342e706e67',
+    previewImg: socialmediaIMG,
     projectLink: 'https://social-media-69506.web.app/',
     githubLink: 'https://github.com/DucSkii/social-media-app',
     description: 'My social media app updates real time with a fully functional back-end. The website is also fully responsive and users can personalise their themes. Other features include options to follow users, like posts, comment, real-time chat between users.',
@@ -40,7 +47,7 @@ const Work = () => {
 
   const spotifyCloneProject = {
     title: 'Spotify Clone',
-    previewImg: 'https://i.gyazo.com/2e2d18947651aac8576b4cb05c556ba9.png',
+    previewImg: spotifyIMG,
     projectLink: 'https://map-project-4763e.web.app/',
     githubLink: 'https://github.com/DucSkii/spotify-clone',
     description: '**MUST HAVE A REAL SPOTIFY ACCOUNT TO USE THIS APP**I made a clone of spotify. The goal of this project was to get as close as I could to the real thing, going down to the small details. The user can view playlists, tracks, artists and albums, they are also able to play audio.',
@@ -50,20 +57,39 @@ const Work = () => {
 
   const bookAppProject = {
     title: 'Book App',
-    previewImg: 'https://i.gyazo.com/e3f11e86313c9af12752198b4205d035.png',
+    previewImg: bookappIMG,
     githubLink: 'https://github.com/DucSkii/react-native-bookapp',
     description: 'This app was styled using StyleSheet from react native. This is my first react native project, I was able to transfer my knowledge from react to create the app. This app does not have a lot of functionality and focuses on the layout and interactiveness of the app.',
     time: '4 days',
     tech: 'React Native',
   }
 
-  const projectArray = [shoppingProject, socialMediaProject, spotifyCloneProject, bookAppProject]
+  const kenzieProject = {
+    title: 'KenzieCreation',
+    previewImg: kenzieIMG,
+    projectLink: 'https://kenziecreation.com/',
+    description: 'This is a freelance project in which I built a portfolio website for my client. I took the time to create a beautiful and sleek design which left my client satisfied.',
+    time: '4 days',
+    tech: 'WordPress'
+  }
+
+  const enviProject = {
+    title: 'Envi Nails & Beauty',
+    previewImg: enviIMG,
+    projectLink: 'https://envinailsandbeauty.co.uk/',
+    description: 'This is a freelance project in which I built the main site for the company Envi Nails & Beauty. I worked closely with the client in order to make sure the site represents who they are and fits the themes of the salon.',
+    time: '6 days',
+    tech: 'WordPress'
+  }
+
+  const projectArray = [shoppingProject, socialMediaProject, spotifyCloneProject, bookAppProject, kenzieProject, enviProject]
 
   const renderProjectCard = () => {
     if (largeScreen) {
-      return projectArray.map((project, index) => {
-        return (
-          <Grid item container xs={8} sm={5} md={3} className={classes.projectCard} key={index}>
+      if (page === 1) {
+        return projectArray.slice(0, 4).map((project, index) => {
+          return (
+            <Grid item container xs={8} sm={5} md={3} className={classes.projectCard} key={index}>
             <Grid item xs={12}>
               <Typography>{project.title}</Typography>
             </Grid>
@@ -76,6 +102,23 @@ const Work = () => {
           </Grid>
         )
       })
+    } else {
+      return projectArray.slice(4, 8).map((project, index) => {
+        return (
+          <Grid item container xs={8} sm={5} md={3} className={classes.projectCard} key={index}>
+          <Grid item xs={12}>
+            <Typography>{project.title}</Typography>
+          </Grid>
+          <Grid item container xs={12}>
+            <ProjectCard {...project} />
+          </Grid>
+          <Grid item xs={12}>
+            <Typography className={classes.techText}>Tech: {project.tech}</Typography>
+          </Grid>
+        </Grid>
+      )
+    })
+    }
     } else {
       if (page === 1) {
         return projectArray.slice(0, 2).map((project, index) => {
@@ -93,8 +136,25 @@ const Work = () => {
             </Grid>
           )
         })
-      } else {
-        return projectArray.slice(2).map((project, index) => {
+      } else if (page === 2) {
+        return projectArray.slice(2, 4).map((project, index) => {
+          return (
+            <Grid item container xs={8} sm={5} md={3} className={classes.projectCard} key={index}>
+              <Grid item xs={12}>
+                <Typography>{project.title}</Typography>
+              </Grid>
+              <Grid item container xs={12}>
+                <ProjectCard {...project} />
+              </Grid>
+              <Grid item xs={12}>
+                <Typography className={classes.techText}>Tech: {project.tech}</Typography>
+              </Grid>
+            </Grid>
+          )
+        })
+      }
+      else {
+        return projectArray.slice(4, 6).map((project, index) => {
           return (
             <Grid item container xs={8} sm={5} md={3} className={classes.projectCard} key={index}>
               <Grid item xs={12}>
@@ -111,6 +171,20 @@ const Work = () => {
         })
       }
     }
+  }
+
+  const prevPage = () => {
+    if (page === 1) return
+    setPage(page - 1)
+  }
+
+  const nextPage = () => {
+    if (largeScreen) {
+      if (page === 2) return
+    } else {
+      if (page === 3) return
+    }
+    setPage(page + 1)
   }
 
   return (
@@ -155,13 +229,13 @@ const Work = () => {
             justifyContent: 'center', alignItems: 'center',
           }}
         >
-          <IconButton onClick={() => setPage(1)}>
+          <IconButton onClick={() => prevPage()}>
             <ChevronLeftIcon />
           </IconButton>
           <Typography color='primary'>
             Page {page}
           </Typography>
-          <IconButton onClick={() => setPage(2)}>
+          <IconButton onClick={() => nextPage()}>
             <ChevronRightIcon />
           </IconButton>
         </Grid>

@@ -73,14 +73,14 @@ const Drawer = () => {
         >
           <Typography color='primary' style={{ fontSize: '13px', userSelect: 'none' }}>Copied to clipboard</Typography>
         </div>
-        <CopyToClipboard text='DucSkii#0176'>
+        <CopyToClipboard text='ducskii'>
           <div className={classes.discordIcon}
             onClick={showClipboard}
           >
             <i className="fab fa-discord" aria-hidden="true"
-              style={{ color: '#707cc3', padding: '5px 22px', fontSize: '19px', userSelect: 'none' }}
+              style={{ color: '#707cc3', padding: '5px 0px', fontSize: '19px', userSelect: 'none', width: '60px', display: 'flex', justifyContent: 'center' }}
             />
-            <Typography color='primary' style={{ fontSize: '13px', userSelect: 'none' }}>DucSkii#0176</Typography>
+            <Typography color='primary' style={{ fontSize: '13px', userSelect: 'none' }}>DUCSKII</Typography>
           </div>
         </CopyToClipboard>
         <a href='https://github.com/DucSkii' target="_blank" rel="noopener noreferrer"
@@ -93,7 +93,7 @@ const Drawer = () => {
           <Button className={classes.buttonSocials}>
             <GitHubIcon color='primary' fontSize='small' />
           </Button>
-          <Typography color='primary' style={{ fontSize: '13px' }}>GitHub</Typography>
+          <Typography color='primary' style={{ fontSize: '13px' }}>GITHUB</Typography>
         </a>
         <a href='https://www.linkedin.com/in/ducviet-dao-898457202/' target="_blank" rel="noopener noreferrer"
           style={{
@@ -105,7 +105,7 @@ const Drawer = () => {
           <Button className={classes.buttonSocials}>
             <LinkedInIcon color='primary' fontSize='small' />
           </Button>
-          <Typography color='primary' style={{ fontSize: '13px' }}>LinkedIn</Typography>
+          <Typography color='primary' style={{ fontSize: '13px' }}>LINKEDIN</Typography>
         </a>
         <a href='https://www.instagram.com/ducskii/' target="_blank" rel="noopener noreferrer"
           style={{
@@ -118,7 +118,7 @@ const Drawer = () => {
           <Button className={classes.buttonSocials} >
             <InstagramIcon color='primary' fontSize='small' />
           </Button>
-          <Typography color='primary' style={{ fontSize: '13px' }}>Instagram</Typography>
+          <Typography color='primary' style={{ fontSize: '13px' }}>INSTAGRAM</Typography>
         </a>
       </div>
     </div>
